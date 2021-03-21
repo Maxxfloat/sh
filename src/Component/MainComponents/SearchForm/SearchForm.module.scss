@@ -2,4 +2,10 @@
 
 .container {
 	@include size(y, y);
+	form {
+		@include displayFlex(row, center, n);
+	}
+	.number_line {
+		direction: ltr;
+	}
 }

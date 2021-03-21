@@ -1,0 +1,397 @@
+<div id="search-panel">
+	<div id="searchBoxHeader">
+		<div class="grid_6 alpha t-fa-title">
+			<i class="fa fa-search"></i>
+			شماره دلخواه خود را از بین <span class="simCount"> 485,041</span> شماره
+			موجود انتخاب نمایید.
+		</div>
+		<div class="grid_2 omega t-en-title">SEARCH YOUR NUMBER</div>
+		<hr />
+	</div>
+
+	<form
+		action="/SearchSim"
+		id="searchSimForm"
+		method="get"
+		novalidate="novalidate"
+	>
+		<input
+			data-val="true"
+			data-val-required="The SimOrderBy field is required."
+			id="SimOrderBy"
+			name="SimOrderBy"
+			type="hidden"
+			value="Update"
+		/>
+		<input
+			data-val="true"
+			data-val-number="The field ItemPerPage must be a number."
+			id="ItemPerPage"
+			name="ItemPerPage"
+			type="hidden"
+			value=""
+		/>
+
+		<div>
+			<div class="row">
+				<label class="grid_1 alpha" for="FirstDigit">شماره</label>
+				<div id="digits" class="grid_7">
+					<input
+						class="inptDigit"
+						data-val="false"
+						data-val-number="The field SixthDigit must be a number."
+						id="SixthDigit"
+						maxlength="1"
+						name="SixthDigit"
+						size="1"
+						tabindex="87"
+						type="text"
+						value="4"
+					/>
+					<input
+						class="inptDigit"
+						data-val="false"
+						data-val-number="The field FifthDigit must be a number."
+						id="FifthDigit"
+						maxlength="1"
+						name="FifthDigit"
+						size="1"
+						tabindex="86"
+						type="text"
+						value="0"
+					/>
+					<input
+						class="inptDigit"
+						data-val="false"
+						data-val-number="The field FourthDigit must be a number."
+						id="FourthDigit"
+						maxlength="1"
+						name="FourthDigit"
+						size="1"
+						tabindex="85"
+						type="text"
+						value="4"
+					/>
+					<input
+						class="inptDigit"
+						data-val="false"
+						data-val-number="The field ThirdDigit must be a number."
+						id="ThirdDigit"
+						maxlength="1"
+						name="ThirdDigit"
+						size="1"
+						tabindex="84"
+						type="text"
+						value="4"
+					/>
+					<input
+						class="inptDigit"
+						data-val="false"
+						data-val-number="The field SecondDigit must be a number."
+						id="SecondDigit"
+						maxlength="1"
+						name="SecondDigit"
+						size="1"
+						tabindex="83"
+						type="text"
+						value="4"
+					/>
+					<input
+						class="inptDigit"
+						data-val="false"
+						data-val-number="The field شماره must be a number."
+						id="FirstDigit"
+						maxlength="1"
+						name="FirstDigit"
+						size="1"
+						tabindex="82"
+						type="text"
+						value="4"
+					/>
+					<input
+						class="inptDigit"
+						data-val="false"
+						data-val-number="The field Code must be a number."
+						id="Code"
+						maxlength="1"
+						name="Code"
+						size="1"
+						tabindex="81"
+						type="text"
+						value="4"
+					/>
+					<select
+						class=""
+						data-val="false"
+						data-val-number="The field PreCode must be a number."
+						id="PreCode"
+						name="PreCode"
+						tabindex="80"
+					>
+						<option value="">فرقی نمی کند</option>
+						<option data-category="1" value="910">0910</option>
+						<option data-category="1" value="911">0911</option>
+						<option data-category="1" value="912">0912</option>
+						<option data-category="1" value="913">0913</option>
+						<option data-category="1" value="914">0914</option>
+						<option data-category="1" value="915">0915</option>
+						<option data-category="1" selected="selected" value="916">
+							0916
+						</option>
+						<option data-category="1" value="917">0917</option>
+						<option data-category="1" value="918">0918</option>
+						<option data-category="1" value="919">0919</option>
+						<option data-category="1" value="990">0990</option>
+						<option data-category="1" value="991">0991</option>
+						<option data-category="1" value="993">0993</option>
+						<option data-category="1" value="992">0992</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="row">
+				<label class="grid_1 alpha" for="SimOperatorE">اپراتور</label>
+				<div class="grid_3 omega">
+					<select data-val="false" id="SimOperatorE" name="SimOperatorE">
+						<option value="">فرقی نمی کند</option>
+						<option selected="selected" value="1">همراه اول</option>
+						<option value="2">ایرانسل</option>
+						<option value="3">تالیا</option>
+						<option value="18">رایتل</option>
+						<option value="19">اپراتور مجازی</option>
+					</select>
+				</div>
+
+				<label class="grid_1 alpha" for="StateId">استان</label>
+				<div class="grid_3 omega">
+					<select
+						data-val="false"
+						data-val-number="The field استان must be a number."
+						data-val-required="The استان field is required."
+						id="StateId"
+						name="StateId"
+					>
+						<option value="">فرقی نمی کند</option>
+						<option value="3">تهران</option>
+						<option value="61">آذربايجان شرقی</option>
+						<option value="62">آذربايجان غربی</option>
+						<option value="63">اردبيل</option>
+						<option value="64">اصفهان</option>
+						<option value="65">ايلام</option>
+						<option value="66">بوشهر</option>
+						<option value="67">چهار محال و بختياری</option>
+						<option value="68">خراسان جنوبی</option>
+						<option value="69">خراسان رضوی</option>
+						<option value="70">خراسان شمالی</option>
+						<option value="71">خوزستان</option>
+						<option value="72">زنجان</option>
+						<option value="73">سمنان</option>
+						<option value="74">سيستان و بلوچستان</option>
+						<option value="75">فارس</option>
+						<option value="76">قزوين</option>
+						<option value="77">قم</option>
+						<option value="78">کردستان</option>
+						<option value="79">کرمان</option>
+						<option value="80">کرمانشاه</option>
+						<option value="81">کهگيلويه و بوير احمد</option>
+						<option value="82">گلستان</option>
+						<option value="83">گيلان</option>
+						<option value="84">لرستان</option>
+						<option value="85">مازندران</option>
+						<option value="86">مرکزی</option>
+						<option value="87">هرمزگان</option>
+						<option value="88">همدان</option>
+						<option value="89">يزد</option>
+						<option value="90">البرز</option>
+						<option value="91">آسیاتل کشوری</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="row">
+				<label class="grid_1 alpha" for="SimType">نوع</label>
+				<div class="grid_3 omega">
+					<select data-val="false" id="SimType" name="SimType">
+						<option selected="selected" value="">فرقی نمی کند</option>
+						<option value="1">دائمی</option>
+						<option value="2">اعتباری</option>
+					</select>
+				</div>
+
+				<label class="grid_1 alpha" for="CityId">شهر</label>
+				<div class="grid_3 omega">
+					<select
+						data-val="false"
+						data-val-number="The field شهر must be a number."
+						data-val-required="The شهر field is required."
+						id="CityId"
+						name="CityId"
+					>
+						<option value="">فرقی نمی کند</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="row">
+				<label class="grid_1 alpha" for="SimStatus">وضعیت</label>
+				<div class="grid_3 omega">
+					<select data-val="false" id="SimStatus" name="SimStatus">
+						<option selected="selected" value="">فرقی نمی کند</option>
+						<option value="1">صفر</option>
+						<option value="2">کارکرده</option>
+						<option value="5">در حد صفر</option>
+					</select>
+				</div>
+
+				<label class="grid_1 alpha" for="SimCoPrice">قیمت</label>
+				<div class="grid_3 omega">
+					<select data-val="false" id="SimCoPrice" name="SimCoPrice">
+						<option selected="selected" value="">فرقی نمی کند</option>
+						<option value="1">بالاترین پیشنهاد</option>
+						<option value="2">توافقی</option>
+						<option value="3">تماس بگیرید</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="row">
+				<label class="grid_1 alpha" for="SimQuality">مرغوبیت</label>
+				<div class="grid_3 omega">
+					<select data-val="false" id="SimQuality" name="SimQuality">
+						<option selected="selected" value="">فرقی نمی کند</option>
+						<option value="2">رند</option>
+						<option value="1">معمولی</option>
+					</select>
+				</div>
+				<label class="grid_1 alpha" for="PriceFrom">از</label>
+				<div class="grid_3 omega">
+					<div class="price-input">
+						<input
+							data-val="false"
+							data-val-number="The field از must be a number."
+							id="PriceFrom"
+							name="PriceFrom"
+							type="text"
+							value=""
+						/><span class="font-dak">تومان</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<label class="grid_1 alpha" for="SimQualityTypeId">نوع رند</label>
+				<div class="grid_3 omega">
+					<select
+						data-val="false"
+						data-val-number="The field نوع رند must be a number."
+						id="SimQualityTypeId"
+						name="SimQualityTypeId"
+					>
+						<option value="">فرقی نمی کند</option>
+						<option value="49">رند حروفی</option>
+						<option value="42">رند 7 رقم یکی</option>
+						<option value="41">رند 6 رقم یکی از آخر</option>
+						<option value="34">رند 6 رقم یکی از اول</option>
+						<option value="31">رند میلیونی</option>
+						<option value="30">رند ده هزاری از آخر</option>
+						<option value="28">رند ده هزاری از اول</option>
+						<option value="46">رند 3 جفت از آخر</option>
+						<option value="24">رند 3 جفت از اول</option>
+						<option value="55">رند متشکل از دو رقم</option>
+						<option value="40">رند 5 رقم یکی از آخر</option>
+						<option value="33">رند 5 رقم یکی از اول</option>
+						<option value="51">رند صد صدی</option>
+						<option value="26">رند گفتاری</option>
+						<option value="29">رند هزاری از آخر</option>
+						<option value="27">رند هزاری از اول</option>
+						<option value="39">رند 4 رقم یکی از آخر</option>
+						<option value="32">رند 4 رقم یکی از اول</option>
+						<option value="37">رند 5 رقم یکی از وسط</option>
+						<option value="47">رند ده دهی از آخر</option>
+						<option value="25">رند ده دهی از اول</option>
+						<option value="52">رند کد پایین</option>
+						<option value="56">رند 3 پله</option>
+						<option value="45">رند جفت جفت از آخر</option>
+						<option value="23">رند جفت جفت از اول</option>
+						<option value="48">رند 3 رقم یکی از اول</option>
+						<option value="21">رند تکرار پیش شماره</option>
+						<option value="18">رند ترازویی</option>
+						<option value="43">رند پله ای از آخر</option>
+						<option value="17">رند پله ای از اول</option>
+						<option value="36">رند 4 رقم یکی از وسط</option>
+						<option value="38">رند 3 رقم یکی از آخر</option>
+						<option value="44">رند ترتیبی از آخر</option>
+						<option value="20">رند ترتیبی از اول</option>
+						<option value="19">رند تاریخ تولدی</option>
+						<option value="16">رند آینه ای</option>
+						<option value="35">رند 3 رقم یکی از وسط</option>
+						<option value="22">رند تکرار 2 رقم یکی</option>
+						<option value="9">رند (ساير)</option>
+					</select>
+				</div>
+				<label class="grid_1 alpha" for="PriceTo">تا</label>
+				<div class="grid_3 omega">
+					<div class="price-input">
+						<input
+							data-val="false"
+							data-val-number="The field تا must be a number."
+							id="PriceTo"
+							name="PriceTo"
+							type="text"
+							value=""
+						/><span class="font-dak">تومان</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<label class="grid_1 alpha" for="VendorType">فروشنده</label>
+				<div class="grid_3 omega">
+					<select data-val="false" id="VendorType" name="VendorType">
+						<option selected="selected" value="">فرقی نمی کند</option>
+						<option value="1">فروشگاه</option>
+						<option value="2">شخصی</option>
+					</select>
+				</div>
+
+				<div class="grid_3 omega" style="margin-right: 100px">
+					<button
+						class="btn col-md-12 search-button"
+						type="submit"
+						id="searchBtn"
+					>
+						جستجو
+					</button>
+					<button
+						class="btn col-md-12 reset-button"
+						type="button"
+						id="resetBtn"
+					>
+						پاک
+					</button>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</form>
+
+	<div id="searchBoxFooter">
+		<hr />
+		<div class="comment">
+			<div class="grid_4 omega alpha">
+				<i class="fa fa-question-circle"></i>
+
+				<a
+					href="/SimHelp/5/%D8%B1%D8%A7%D9%87%D9%86%D9%85%D8%A7%DB%8C-%D8%AC%D8%B3%D8%AA%D8%AC%D9%88%DB%8C-%D8%B3%DB%8C%D9%85-%DA%A9%D8%A7%D8%B1%D8%AA"
+					target="_blank"
+					>چگونه از امکانات جستجو بهتر استفاده کنید.</a
+				>
+			</div>
+			<div class="grid_4 omega alpha left t-fa-title" style="text-align: left">
+				<i class="fa fa-database"></i>
+				شماره های درج شده تاکنون:<span class="simCount"> 2,920,486</span>
+			</div>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
