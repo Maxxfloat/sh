@@ -1,0 +1,133 @@
+@import "/src/Component/UI/Sass/Main";
+
+@mixin navbarItem($base) {
+	@include size(y, n);
+	font-size: 3rem;
+	white-space: nowrap;
+	background-image: $base;
+	@include displayFlex(row, n, center);
+
+	.link {
+		padding: 1rem 1.5rem;
+	}
+}
+
+.section {
+	.header {
+		display: none;
+		ul {
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			background-color: #333;
+			display: flex;
+
+			justify-content: center;
+			li {
+				.link {
+					display: block;
+					color: white;
+					padding: 1rem 1.6rem;
+					text-decoration: none;
+					font-size: 1.5rem;
+					&:hover {
+						background-color: #111;
+					}
+				}
+			}
+		}
+		@include responsive(tabletPortrait) {
+			display: block;
+		}
+	}
+	.navbar {
+		position: fixed;
+		@include size(n, y);
+		height: 4rem;
+		.navbar_container {
+			@include size(y, y);
+			@include displayFlex(row-reverse, flex-start, center);
+			.logo {
+				font-size: 1.5rem;
+				padding: 0 1rem;
+			}
+			.navbar_menu {
+				@include size(y, y);
+				@include displayFlex(row, n, center);
+				.active_tab {
+					@include size(y, y);
+					font-size: 3rem;
+					white-space: nowrap;
+					@include displayFlex(row, n, center);
+
+					.link {
+						padding: 1rem 1.5rem;
+					}
+				}
+				.inactive_tab {
+					@include size(y, n);
+					font-size: 3rem;
+					white-space: nowrap;
+					@include displayFlex(row, n, center);
+
+					.link {
+						padding: 1rem 1.5rem;
+					}
+				}
+
+				.sim_background {
+					background-image: $simBase;
+				}
+
+				.domain_background {
+					background-image: $domainBase;
+				}
+			}
+		}
+		@include responsive(tabletLandscape) {
+			position: fixed;
+			@include size(n, y);
+			height: 8rem;
+			.navbar_container {
+				@include size(y, y);
+				@include displayFlex(row-reverse, flex-start, center);
+				.logo {
+					font-size: 1.5rem;
+					padding: 0 1rem;
+				}
+				.navbar_menu {
+					@include size(y, y);
+					@include displayFlex(row, n, center);
+					.active_tab {
+						@include size(y, y);
+						font-size: 3rem;
+						white-space: nowrap;
+						@include displayFlex(row, n, center);
+
+						.link {
+							padding: 1rem 1.5rem;
+						}
+					}
+					.inactive_tab {
+						@include size(y, n);
+						font-size: 3rem;
+						white-space: nowrap;
+						@include displayFlex(row, n, center);
+
+						.link {
+							padding: 1rem 1.5rem;
+						}
+					}
+
+					.sim_background {
+						background-image: $simBase;
+					}
+
+					.domain_background {
+						background-image: $domainBase;
+					}
+				}
+			}
+		}
+	}
+}

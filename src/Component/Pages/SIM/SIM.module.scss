@@ -1,0 +1,9 @@
+@import "/src/Component/UI/Sass/Main.scss";
+
+.ad {
+	@include size(n, y);
+	height: 24rem;
+	@include responsive(tabletLandscape) {
+		height: 16rem;
+	}
+}

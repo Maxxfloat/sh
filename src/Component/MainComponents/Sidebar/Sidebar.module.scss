@@ -1,0 +1,49 @@
+@import "/src/Component/UI/Sass/Main";
+
+.section {
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	background-color: $black;
+	height: 100vh;
+	@include responsive(tabletPortrait) {
+		display: none;
+	}
+	.close_toggle {
+		box-sizing: border-box;
+		display: flex;
+		color: white;
+		padding: 1rem 2rem 1rem 1rem;
+		// margin: 0.5rem 0.5rem;
+		font-size: 5rem;
+		width: 100%;
+		border-bottom: white 1.5px solid;
+	}
+	ul {
+		margin: 0;
+		padding: 0;
+		width: 100%;
+
+		li {
+			box-sizing: border-box;
+
+			width: 100%;
+			border-bottom: blanchedalmond solid 1.5px;
+			&:hover,
+			&:active {
+				background-color: #3a3a3a;
+			}
+			.link {
+				display: block;
+				padding: 0.5rem 2rem 0.5rem 2rem;
+				color: gray;
+				font-size: 1.5rem;
+			}
+		}
+	}
+}
+
+.close {
+	width: 0rem;
+	overflow: hidden;
+}

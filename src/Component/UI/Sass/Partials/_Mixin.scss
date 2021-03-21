@@ -1,0 +1,33 @@
+@mixin responsive($responsive) {
+	@if $responsive == desktop {
+		@media (min-width: "1200px") {
+			@content;
+		}
+	}
+	@if $responsive == tabletLandscape {
+		@media (min-width: "900px") {
+			@content;
+		}
+	}
+	@if $responsive == tabletPortrait {
+		@media (min-width: "600px") {
+			@content;
+		}
+	}
+}
+
+@mixin displayFlex($direction, $justify, $align) {
+	display: flex;
+	flex-direction: $direction;
+	justify-content: $justify;
+	align-items: $align;
+}
+
+@mixin size($height, $width) {
+	@if $height == y {
+		height: 100%;
+	}
+	@if $width == y {
+		width: 100%;
+	}
+}

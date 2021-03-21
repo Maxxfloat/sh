@@ -1,0 +1,15 @@
+@import "/src/Component/UI/Sass/Main.scss";
+
+.container {
+	// @include size(y, y);
+	@include displayFlex(row, center, center);
+	border: {
+		style: solid;
+		width: 2px;
+		color: gray;
+		radius: 5px;
+	}
+	margin: 1rem;
+	font-size: 4rem;
+	box-sizing: border-box;
+}

@@ -1,0 +1,5 @@
+@import "/src/Component/UI/Sass/Main.scss";
+
+.container {
+	@include size(y, y);
+}
