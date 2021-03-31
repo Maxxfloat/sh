@@ -43,7 +43,7 @@
 	.navbar {
 		position: relative;
 		@include size(n, y);
-		height: 4rem;
+		height: 5rem;
 		.navbar_container {
 			@include size(y, y);
 			@include displayFlex(row-reverse, flex-start, center);
@@ -54,25 +54,30 @@
 			.navbar_menu {
 				@include size(y, y);
 				@include displayFlex(row, n, center);
+				.active_tab,
+				.inactive_tab {
+					font-size: 2.5rem;
+					white-space: nowrap;
+					display: inherit;
+					.link {
+						padding: 1rem 1rem;
+						margin-right: 0.5rem;
+					}
+				}
 				.active_tab {
 					@include size(y, y);
-					font-size: 3rem;
-					white-space: nowrap;
-					@include displayFlex(row, n, center);
 
-					.link {
-						padding: 1rem 1.5rem;
+					.sidebarToggle {
+						padding-right: 1.5rem;
+						padding-left: 1rem;
+						font-size: 5rem;
+						height: 5rem;
+						@include displayFlex(column, center, center);
+						color: white;
 					}
 				}
 				.inactive_tab {
 					@include size(y, n);
-					font-size: 3rem;
-					white-space: nowrap;
-					@include displayFlex(row, n, center);
-
-					.link {
-						padding: 1rem 1.5rem;
-					}
 				}
 
 				.sim_background {

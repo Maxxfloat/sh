@@ -11,7 +11,7 @@ const isSim = (state = initialState, action) => {
 			return false;
 
 		default:
-			return state.isSim;
+			return true;
 	}
 };
 

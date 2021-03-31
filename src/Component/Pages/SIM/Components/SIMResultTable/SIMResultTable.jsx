@@ -105,8 +105,6 @@ const SIMResultTable = () => {
 				</button>
 				<div>
 					{pageOptions.map((page) => {
-						console.log("pageIndex: ", pageIndex);
-						console.log("page: ", page);
 						if (page === pageIndex) {
 							return <strong key={page}>{page + 1}</strong>;
 						} else if (page < pageIndex - 2) {
@@ -133,7 +131,6 @@ const SIMResultTable = () => {
 				</button>
 				<button
 					onClick={() => {
-						console.log(pageOptions);
 						return gotoPage(pageCount - 1);
 					}}
 					disabled={!canNextPage}

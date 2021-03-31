@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import { FiMenu } from "react-icons/fi";
+
 import s from "./Header.module.scss";
 import { headerMenu } from "../../Data/NavMenuData";
 
@@ -72,6 +74,12 @@ const Header = () => {
 									isSim ? s.sim_background : s.domain_background
 								}`}
 							>
+								<span
+									className={s.sidebarToggle}
+									onClick={() => dispatch({ type: "sidebarToggleClick" })}
+								>
+									<FiMenu />
+								</span>
 								{isSim ? tabs[0] : tabs[1]}
 							</div>
 							<div

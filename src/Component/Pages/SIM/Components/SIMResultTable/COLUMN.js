@@ -1,8 +1,8 @@
 export const COLUMN = [
-	{
-		Header: "Id",
-		accessor: "id",
-	},
+	// {
+	// 	Header: "Id",
+	// 	accessor: "id",
+	// },
 	{
 		Header: "Phone Number",
 		accessor: "phone_number",
@@ -15,10 +15,10 @@ export const COLUMN = [
 		Header: "Price",
 		accessor: "price",
 	},
-	{
-		Header: "Update",
-		accessor: "update",
-	},
+	// {
+	// 	Header: "Update",
+	// 	accessor: "update",
+	// },
 	{
 		Header: "Position",
 		accessor: "position",
@@ -27,16 +27,16 @@ export const COLUMN = [
 		Header: "Condition",
 		accessor: "condition",
 	},
-	{
-		Header: "Code",
-		accessor: "code",
-	},
+	// {
+	// 	Header: "Code",
+	// 	accessor: "code",
+	// },
 	{
 		Header: "City",
 		accessor: "country",
 	},
-	{
-		Header: "View",
-		accessor: "view",
-	},
+	// {
+	// 	Header: "View",
+	// 	accessor: "view",
+	// },
 ];

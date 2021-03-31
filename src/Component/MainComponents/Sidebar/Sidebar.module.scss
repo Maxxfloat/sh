@@ -1,11 +1,13 @@
 @import "/src/Component/UI/Sass/Main";
 
 .section {
-	display: flex;
-	flex-direction: column;
+	@include displayFlex(column, n, n);
 	position: fixed;
+	top: 0;
+	right: 0;
 	background-color: $black;
 	height: 100vh;
+	width: 20rem;
 	@include responsive(tabletPortrait) {
 		display: none;
 	}

@@ -1,22 +1,22 @@
 const initialState = {
-  sidebarOpen: false,
-  modarOpen: false,
+	sidebarOpen: false,
+	modalOpen: false,
 };
 
 const sidebarReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case "sidebarToggleClick":
-      return { sidebarOpen: true, modarOpen: true };
-    case "sidebarCloseClick": {
-      return { sidebarOpen: false, modarOpen: false };
-    }
-    case "modalClick": {
-      return { sidebarOpen: false, modarOpen: false };
-    }
+	switch (action.type) {
+		case "sidebarToggleClick":
+			return { sidebarOpen: true, modalOpen: true };
+		case "sidebarCloseClick": {
+			return { sidebarOpen: false, modalOpen: false };
+		}
+		case "modalClick": {
+			return { sidebarOpen: false, modalOpen: false };
+		}
 
-    default:
-      return state;
-  }
+		default:
+			return state;
+	}
 };
 
 export default sidebarReducer;
