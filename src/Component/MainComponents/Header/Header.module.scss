@@ -92,7 +92,7 @@
 		@include responsive(tabletLandscape) {
 			position: fixed;
 			@include size(n, y);
-			height: 8rem;
+			height: 7rem;
 			.navbar_container {
 				@include size(y, y);
 				@include displayFlex(row-reverse, flex-start, center);
