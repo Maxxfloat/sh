@@ -5,12 +5,14 @@ import s from "./App.module.scss";
 import Header from "./MainComponents/Header/Header";
 import Sidebar from "./MainComponents/Sidebar/Sidebar";
 // -- pages --
+import Home from "./Pages/Home/Home";
 import SIM from "./Pages/SIM/SIM";
 
 const App = () => {
 	const pages = (
 		<Switch>
-			<Route component={SIM} path="/" />
+			<Route component={Home} path="/" exact />
+			<Route component={SIM} path="/sim" />
 		</Switch>
 	);
 	return (

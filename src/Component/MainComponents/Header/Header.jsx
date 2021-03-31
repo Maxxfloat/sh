@@ -12,7 +12,7 @@ const Header = () => {
 
 	const tabs = [
 		<Link
-			to="/"
+			to="/sim"
 			className={s.link}
 			onClick={() => dispatch({ type: "switchToSim" })}
 		>

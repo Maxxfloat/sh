@@ -1,5 +1,5 @@
 import React from "react";
-import { useTable, useSortBy } from "react-table";
+import { useTable, usePagination } from "react-table";
 
 import s from "./SIMResultTable.module.scss";
 import { COLUMN } from "./COLUMN";
@@ -13,15 +13,25 @@ const SIMResultTable = () => {
 		getTableProps,
 		getTableBodyProps,
 		headerGroups,
-		rows,
+		page,
+		nextPage,
+		previousPage,
+		canNextPage,
+		canPreviousPage,
+		pageOptions,
+		gotoPage,
+		pageCount,
 		prepareRow,
+		state,
 	} = useTable(
 		{
 			columns,
 			data,
 		},
-		useSortBy
+		usePagination
 	);
+
+	const { pageIndex } = state;
 
 	return (
 		// apply the table props
@@ -37,14 +47,7 @@ const SIMResultTable = () => {
 									// Loop over the headers in each row
 									headerGroup.headers.map((column) => (
 										// Apply the header cell props
-										<th
-											{...column.getHeaderProps(column.getSortByToggleProps())}
-										>
-											{column.isSorted
-												? column.isSortedDesc
-													? "F "
-													: "N "
-												: ""}
+										<th {...column.getHeaderProps()}>
 											{
 												// Render the header
 												column.render("Header")
@@ -60,7 +63,7 @@ const SIMResultTable = () => {
 				<tbody {...getTableBodyProps()}>
 					{
 						// Loop over the table rows
-						rows.map((row) => {
+						page.map((row) => {
 							// Prepare the row for display
 							prepareRow(row);
 							return (
@@ -86,6 +89,58 @@ const SIMResultTable = () => {
 					}
 				</tbody>
 			</table>
+			<div>
+				<span>
+					{"  "}
+					<strong>
+						{pageIndex + 1} از {pageCount}
+					</strong>
+					{"  "}
+				</span>
+				<button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
+					{"<<"}
+				</button>
+				<button onClick={() => previousPage()} disabled={!canPreviousPage}>
+					قبلی
+				</button>
+				<div>
+					{pageOptions.map((page) => {
+						console.log("pageIndex: ", pageIndex);
+						console.log("page: ", page);
+						if (page === pageIndex) {
+							return <strong key={page}>{page + 1}</strong>;
+						} else if (page < pageIndex - 2) {
+							if (page >= pageIndex - 3) {
+								return <strong key={page}>{"..."}</strong>;
+							}
+						} else if (page > pageIndex + 2) {
+							if (page <= pageIndex + 3) {
+								return <strong key={page}>{"..."}</strong>;
+							}
+						} else {
+							return (
+								<button onClick={() => gotoPage(page)} key={page}>
+									{page + 1}
+								</button>
+							);
+						}
+						return null;
+					})}
+				</div>
+
+				<button onClick={() => nextPage()} disabled={!canNextPage}>
+					بعدی
+				</button>
+				<button
+					onClick={() => {
+						console.log(pageOptions);
+						return gotoPage(pageCount - 1);
+					}}
+					disabled={!canNextPage}
+				>
+					{">>"}
+				</button>
+			</div>
 		</div>
 	);
 	// return <div></div>;
