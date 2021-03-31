@@ -1,0 +1,26 @@
+.section {
+	font-size: 8rem;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	table {
+		// width: 100%;
+		border-collapse: collapse;
+		td,
+		th {
+			border: 1px solid #ddd;
+			padding: 8px;
+		}
+		th {
+			padding-top: 12px;
+			padding-bottom: 12px;
+			text-align: right;
+			background-color: #4caf50;
+			color: white;
+		}
+		td:nth-child(even) {
+			background-color: #d3d3d3;
+		}
+	}
+}

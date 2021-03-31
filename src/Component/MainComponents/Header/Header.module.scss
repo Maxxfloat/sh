@@ -41,7 +41,7 @@
 		}
 	}
 	.navbar {
-		position: fixed;
+		position: relative;
 		@include size(n, y);
 		height: 4rem;
 		.navbar_container {
@@ -129,5 +129,10 @@
 				}
 			}
 		}
+	}
+	.scrolled {
+		position: fixed;
+		top: 0;
+		left: 0;
 	}
 }

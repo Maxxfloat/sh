@@ -7,6 +7,7 @@
 		@include displayFlex(row, space-around, flex-start);
 		.rightbar,
 		.leftbar {
+			margin: 2rem;
 			display: none;
 			width: 20%;
 		}
@@ -28,6 +29,8 @@
 		}
 
 		.main {
+			margin: 2rem;
+
 			@include size(n, y);
 			display: inline-block;
 

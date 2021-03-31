@@ -1,0 +1,24 @@
+.section {
+	height: auto;
+	.pagination_btns {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 4rem;
+
+		.pagination_li {
+			padding: 1rem;
+			background-color: red;
+			cursor: pointer;
+			.pagination_a {
+				color: white;
+			}
+		}
+	}
+	.active_btns a {
+		background-color: red;
+		color: white;
+	}
+}

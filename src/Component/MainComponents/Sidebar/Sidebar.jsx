@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { AiOutlineCloseSquare } from "react-icons/ai";
 
 import s from "./Sidebar.module.scss";
-import { headerMenu } from "../../Assets/Data";
+import { headerMenu } from "../../Data/NavMenuData";
 
 const Sidebar = () => {
 	const dispatch = useDispatch();

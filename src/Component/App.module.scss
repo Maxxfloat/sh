@@ -1,6 +1,9 @@
 @import "/src/Component/UI/Sass/Main.scss";
 .gap {
-	height: 4rem;
+	height: 1rem;
+	@include responsive(tabletPortrait) {
+		height: 2rem;
+	}
 	@include responsive(tabletLandscape) {
 		height: 8rem;
 	}

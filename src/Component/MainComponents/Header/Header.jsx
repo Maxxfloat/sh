@@ -2,11 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import s from "./Header.module.scss";
-import { headerMenu } from "../../Assets/Data";
+import { headerMenu } from "../../Data/NavMenuData";
 
 const Header = () => {
 	const dispatch = useDispatch();
 	const isSim = useSelector((state) => state.isSim);
+	const [sticky, setSticky] = React.useState(false);
+	const navbarRef = React.useRef(null);
 
 	const tabs = [
 		<Link
@@ -27,6 +29,23 @@ const Header = () => {
 		</Link>,
 	];
 
+	const handleScroll = () => {
+		const offset = window.scrollY;
+		if (offset > 0) {
+			setSticky(true);
+		} else {
+			setSticky(false);
+		}
+	};
+
+	React.useEffect(() => {
+		window.addEventListener("scroll", handleScroll);
+
+		return () => {
+			window.removeEventListener("scroll", () => handleScroll);
+		};
+	}, []);
+
 	return (
 		<>
 			<div className={s.section}>
@@ -41,7 +60,10 @@ const Header = () => {
 						))}
 					</ul>
 				</div>
-				<div className={s.navbar}>
+				<div
+					ref={navbarRef}
+					className={`${s.navbar} ${sticky ? s.scrolled : ""}`}
+				>
 					<div className={s.navbar_container}>
 						<div className={s.logo}>logo</div>
 						<div className={s.navbar_menu}>
