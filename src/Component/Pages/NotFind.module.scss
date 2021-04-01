@@ -1,0 +1,19 @@
+@import "/src/Component/UI/Sass/Main.scss";
+
+.section {
+	@include displayFlex(row, center, center);
+	div {
+		strong {
+			font-size: 15rem;
+		}
+		p {
+			font-size: 2rem;
+		}
+		button {
+			font-size: 4rem;
+			.link {
+				color: black;
+			}
+		}
+	}
+}

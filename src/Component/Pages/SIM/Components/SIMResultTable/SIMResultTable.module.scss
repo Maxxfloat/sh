@@ -1,10 +1,13 @@
 @import "/src/Component/UI/Sass/Main.scss";
 
 .section {
+	padding: 1rem 0;
 	font-size: 7rem;
+	box-sizing: inherit;
 	width: 100%;
 	@include displayFlex(column, center, center);
 	table {
+		@include size(y, y);
 		// width: 100%;
 		border-collapse: collapse;
 		td,
@@ -19,8 +22,18 @@
 			background-color: #4caf50;
 			color: white;
 		}
-		td:nth-child(even) {
+		tr:nth-child(even) {
 			background-color: #d3d3d3;
+		}
+	}
+	.paggination {
+		@include displayFlex(row, center, center);
+		strong {
+			margin: 0 1rem;
+		}
+		button {
+			font-size: 1.5rem;
+			margin: 1rem 0.2rem;
 		}
 	}
 }

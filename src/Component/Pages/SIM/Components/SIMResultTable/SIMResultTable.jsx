@@ -89,7 +89,7 @@ const SIMResultTable = () => {
 					}
 				</tbody>
 			</table>
-			<div>
+			<div className={s.paggination}>
 				<span>
 					{"  "}
 					<strong>
@@ -140,7 +140,6 @@ const SIMResultTable = () => {
 			</div>
 		</div>
 	);
-	// return <div></div>;
 };
 
 export default SIMResultTable;

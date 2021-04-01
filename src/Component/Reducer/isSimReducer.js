@@ -1,17 +1,15 @@
-const initialState = {
-	isSim: true,
-};
+const initialState = { isSim: true };
 
 const isSim = (state = initialState, action) => {
 	switch (action.type) {
 		case "switchToSim":
-			return true;
+			return { isSim: true };
 
 		case "switchToDomain":
-			return false;
+			return { isSim: false };
 
 		default:
-			return true;
+			return state;
 	}
 };
 

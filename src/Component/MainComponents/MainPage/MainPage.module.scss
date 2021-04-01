@@ -7,7 +7,6 @@
 		@include displayFlex(row, space-around, flex-start);
 		.rightbar,
 		.leftbar {
-			margin: 1rem;
 			display: none;
 			width: 20%;
 			@include responsive(tabletPortable) {
@@ -36,7 +35,6 @@
 			display: inline-block;
 
 			@include responsive(tabletLandscape) {
-				margin: 2rem;
 				width: 70%;
 			}
 			@include responsive(desktop) {

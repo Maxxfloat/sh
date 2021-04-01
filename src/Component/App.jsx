@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import s from "./App.module.scss";
 
 import Header from "./MainComponents/Header/Header";
@@ -8,27 +8,28 @@ import Sidebar from "./MainComponents/Sidebar/Sidebar";
 // -- pages --
 import Home from "./Pages/Home/Home";
 import SIM from "./Pages/SIM/SIM";
+import Signup from "./Pages/Signup";
+import NotFind from "./Pages/NotFind";
 
 const App = () => {
-	const [windowWidth, setWindowWidth] = React.useState(0);
-
+	const isPhone = useSelector((state) => {
+		const { isPhone } = { ...state.windowDimention };
+		return isPhone;
+	});
 	const dispatch = useDispatch();
 
-	const updateDimensions = () => {
-		const width = window.innerWidth;
-		setWindowWidth(width);
-		() => dispatch({ type: "resize", payload: width });
-	};
-
 	React.useEffect(() => {
-		window.addEventListener("resize", updateDimensions);
-		return () => window.removeEventListener("resize", updateDimensions);
-	}, []);
+		window.addEventListener("resize", () => dispatch({ type: "resize" }));
+		return () =>
+			window.removeEventListener("resize", () => dispatch({ type: "resize" }));
+	}, [dispatch]);
 
 	const pages = (
 		<Switch>
 			<Route component={Home} path="/" exact />
 			<Route component={SIM} path="/sim" />
+			<Route component={Signup} path="/signup" />
+			<Route component={NotFind} path="*" />
 		</Switch>
 	);
 	return (
@@ -36,8 +37,7 @@ const App = () => {
 			<BrowserRouter>
 				<Header />
 				<div className={s.gap} />
-				{/* <Sidebar /> */}
-				{windowWidth <= 600 ? <Sidebar /> : null}
+				{isPhone ? <Sidebar /> : null}
 				{pages}
 			</BrowserRouter>
 		</div>

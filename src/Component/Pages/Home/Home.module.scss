@@ -1,0 +1,120 @@
+@import "/src/Component/UI/Sass/Main.scss";
+
+.banner {
+	min-height: 95vh;
+	height: auto;
+	// overflow: hidden;
+	.cardContainer {
+		@include size(y, y);
+		font-size: 4rem;
+		position: relative;
+		.cardSim,
+		.cardDomain,
+		.cardInfo {
+			display: block;
+			position: absolute;
+			border: gray solid 2px;
+			border-radius: 10px;
+			width: 85%;
+			height: 35vh;
+		}
+		.cardSim {
+			right: 3%;
+			top: 0rem;
+			background-image: linear-gradient(to right, #00db12, #00db12);
+			z-index: 4;
+			div {
+				@include displayFlex(column, center, flex-start);
+				margin: 1.5rem;
+				font-size: inherit;
+				h1:first-child {
+					font-size: 4rem;
+					font-weight: bold;
+				}
+				h1 {
+					font-size: 2rem;
+					padding: 0;
+					margin: 0;
+				}
+				p {
+					font-size: 5rem;
+					font-weight: bold;
+					align-self: center;
+					padding: 0;
+					margin: 0;
+				}
+			}
+		}
+		.cardDomain {
+			position: relative;
+			right: 10%;
+			top: 23rem;
+			z-index: 3;
+			background-image: linear-gradient(to right, #0083db, #0083db);
+			div {
+				@include displayFlex(column, center, center);
+				height: 100%;
+				// position: absolute;
+				// top: 15rem;
+				// right: 20rem;
+				font-size: inherit;
+				h1:first-child {
+					font-size: 5rem;
+					font-weight: bold;
+					margin: 0;
+				}
+				h2 {
+					font-size: 2rem;
+					padding: 0;
+					margin: 0;
+				}
+			}
+		}
+		.cardInfo {
+			right: 3%;
+			top: 46rem;
+			z-index: 2;
+			div {
+				@include displayFlex(column, center, flex-end);
+				height: 100%;
+				font-size: inherit;
+				padding: 2rem;
+				h1 {
+					text-align: left;
+					font-size: 2rem;
+					font-weight: bold;
+					margin: 0;
+				}
+				button {
+					align-self: center;
+					margin-top: 1rem;
+					background-color: cyan;
+					border: gray solid 2px;
+					border-radius: 4px;
+					.link {
+						font-size: 2rem;
+						color: black;
+					}
+				}
+			}
+		}
+	}
+}
+
+.shortCuts {
+	@include displayFlex(column, center, center);
+	div {
+		width: 90%;
+		border: black solid 2px;
+		border-radius: 3px;
+		text-align: center;
+		.link {
+			font-size: 3rem;
+			color: black;
+		}
+	}
+}
+
+.vitrine {
+	min-height: 90vh;
+}

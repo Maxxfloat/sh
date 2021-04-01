@@ -8,7 +8,15 @@ import { headerMenu } from "../../Data/NavMenuData";
 
 const Header = () => {
 	const dispatch = useDispatch();
-	const isSim = useSelector((state) => state.isSim);
+	const isSim = useSelector((state) => {
+		const { isSim } = { ...state.isSim };
+		return isSim;
+	});
+	const windowDimention = useSelector((state) => {
+		const { isPhone } = { ...state.windowDimention };
+		return isPhone;
+	});
+
 	const [sticky, setSticky] = React.useState(false);
 	const navbarRef = React.useRef(null);
 
@@ -74,12 +82,15 @@ const Header = () => {
 									isSim ? s.sim_background : s.domain_background
 								}`}
 							>
-								<span
-									className={s.sidebarToggle}
-									onClick={() => dispatch({ type: "sidebarToggleClick" })}
-								>
-									<FiMenu />
-								</span>
+								{windowDimention ? (
+									<span
+										className={s.sidebarToggle}
+										onClick={() => dispatch({ type: "sidebarToggleClick" })}
+									>
+										<FiMenu />
+									</span>
+								) : null}
+
 								{isSim ? tabs[0] : tabs[1]}
 							</div>
 							<div

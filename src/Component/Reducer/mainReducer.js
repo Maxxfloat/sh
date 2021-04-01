@@ -4,11 +4,13 @@ import thunk from "redux-thunk";
 
 import sidebarReducer from "./sidebarReducer";
 import isSim from "./isSimReducer";
+import windowDimention from "./windowDimentionReducer";
 
 const store = createStore(
 	combineReducers({
 		sidebar: sidebarReducer,
 		isSim: isSim,
+		windowDimention: windowDimention,
 	}),
 	composeWithDevTools(applyMiddleware(thunk))
 );
