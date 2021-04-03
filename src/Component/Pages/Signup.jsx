@@ -2,7 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 
 const Signup = () => {
-	const { register, watch, errors, handleSubmit } = useForm();
+	const { register, handleSubmit } = useForm();
 	return (
 		<div>
 			<form onSubmit={handleSubmit((data) => console.log(data))}>

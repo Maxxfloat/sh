@@ -12,7 +12,7 @@ import {
 } from "./SearchData";
 
 const SIMSearchForm = () => {
-	const { register, handleSubmit, errors, reset, watch } = useForm();
+	const { register, handleSubmit, reset, watch } = useForm();
 	const province = watch("SIM.province");
 	const numField = [];
 	for (let c = 0; c <= 6; c++) {

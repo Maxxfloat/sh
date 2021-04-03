@@ -12,8 +12,8 @@ const Header = () => {
 		const { isSim } = { ...state.isSim };
 		return isSim;
 	});
-	const windowDimention = useSelector((state) => {
-		const { isPhone } = { ...state.windowDimention };
+	const dimention = useSelector((state) => {
+		const { isPhone } = { ...state.Dimention };
 		return isPhone;
 	});
 
@@ -82,7 +82,7 @@ const Header = () => {
 									isSim ? s.sim_background : s.domain_background
 								}`}
 							>
-								{windowDimention ? (
+								{dimention ? (
 									<span
 										className={s.sidebarToggle}
 										onClick={() => dispatch({ type: "sidebarToggleClick" })}

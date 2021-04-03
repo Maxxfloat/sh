@@ -11,7 +11,7 @@ const initialState = {
 	isPhone: isPhone,
 };
 
-const windowDimentionReducer = (state = initialState, action) => {
+const DimentionReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case "resize": {
 			const width = window.innerWidth;
@@ -26,4 +26,4 @@ const windowDimentionReducer = (state = initialState, action) => {
 	}
 };
 
-export default windowDimentionReducer;
+export default DimentionReducer;
