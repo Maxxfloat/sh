@@ -5,7 +5,7 @@
 	font-size: 7rem;
 	box-sizing: inherit;
 	width: 100%;
-	@include displayFlex(column, center, center);
+	// @include displayFlex(column, center, center);
 	table {
 		@include size(y, y);
 		// width: 100%;
