@@ -1,7 +1,8 @@
 @import "/src/Component/UI/Sass/Main.scss";
 
 .section {
-	@include displayFlex(row, center, center);
+	@include displayFlex(column, center, center);
+	min-height: 85vh;
 	div {
 		strong {
 			font-size: 15rem;

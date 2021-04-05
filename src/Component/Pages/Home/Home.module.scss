@@ -2,7 +2,7 @@
 
 .banner {
 	min-height: 80vh;
-
+	margin-top: 2rem;
 	.container {
 		height: 0;
 		.cardContainer {
@@ -106,7 +106,7 @@
 	.vitrineContainer {
 		width: 100%;
 	}
-	@include displayFlex(row, center, center);
+	@include displayFlex(column, center, center);
 	@include responsive(tabletPortrait) {
 		.vitrineContainer {
 			width: 90%;

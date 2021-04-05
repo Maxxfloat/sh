@@ -8,7 +8,7 @@ import Sidebar from "./MainComponents/Sidebar/Sidebar";
 // -- pages --
 import Home from "./Pages/Home/Home";
 import SIM from "./Pages/SIM/SIM";
-import Signup from "./Pages/Signup";
+import Register from "./Pages/Register/Register";
 import NotFind from "./Pages/NotFind";
 
 const App = () => {
@@ -28,7 +28,7 @@ const App = () => {
 		<Switch>
 			<Route component={Home} path="/" exact />
 			<Route component={SIM} path="/sim" />
-			<Route component={Signup} path="/signup" />
+			<Route component={Register} path="/register" />
 			<Route component={NotFind} path="*" />
 		</Switch>
 	);

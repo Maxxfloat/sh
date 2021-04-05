@@ -1,0 +1,84 @@
+@import "/src/Component/UI/Sass/Main.scss";
+
+.section {
+	background-color: #e0e0e0;
+	min-height: 100vh;
+	@include displayFlex(row, center, center);
+	.container {
+		margin: 3rem 0;
+		width: 95%;
+		background-color: white;
+		border-radius: 15px;
+		padding: 3rem;
+		box-sizing: border-box;
+		font-size: 3rem;
+		@include responsive(tabletLandscape) {
+			width: 50%;
+		}
+		.title {
+			font-size: 4rem;
+			h2 {
+				font-weight: normal;
+				text-align: center;
+			}
+		}
+		form {
+			@include displayFlex(column, center, center);
+			.formContainer {
+				@include displayFlex(column, center, flex-start);
+				// width: 70%;
+				// padding: 2rem;
+				font-size: 2.5rem;
+				width: 100%;
+				// font-size: inherit;
+				p {
+					padding: 0;
+					margin: 0;
+					text-align: justify;
+				}
+				input {
+					direction: ltr;
+					width: 100%;
+					height: 5rem;
+					margin-bottom: 2rem;
+					padding: 0 2rem;
+					box-sizing: border-box;
+					background-color: #ecffec;
+					border: solid gray 1px;
+					border-radius: 5px;
+					&::placeholder {
+						text-align: right;
+						color: black;
+					}
+				}
+				input[name="reg.name"] {
+					direction: rtl;
+				}
+				button {
+					align-self: flex-end;
+					background-color: #d0ffd0;
+					border: solid gray 1px;
+					border-radius: 3px;
+					width: 7rem;
+					height: 5rem;
+					font-size: 2rem;
+					color: black;
+				}
+			}
+		}
+		.goto {
+			font-size: 3rem;
+			width: 100%;
+			// border-top: #002400 solid 2px;
+			margin-top: 4rem;
+			button {
+				width: 100%;
+				height: 8rem;
+				background-color: #4db8ff;
+				border: solid gray 1px;
+				border-radius: 3px;
+				color: #000d20;
+			}
+		}
+	}
+}
