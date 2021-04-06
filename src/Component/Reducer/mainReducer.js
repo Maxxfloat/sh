@@ -2,15 +2,17 @@ import { combineReducers, createStore, applyMiddleware } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
 
-import sidebarReducer from "./sidebarReducer";
+import sidebar from "./sidebarReducer";
 import isSim from "./isSimReducer";
 import dimention from "./DimentionReducer";
+import didAuth from "./AuthReducer";
 
 const store = createStore(
 	combineReducers({
-		sidebar: sidebarReducer,
-		isSim: isSim,
-		dimention: dimention,
+		sidebar,
+		isSim,
+		dimention,
+		didAuth,
 	}),
 	composeWithDevTools(applyMiddleware(thunk))
 );

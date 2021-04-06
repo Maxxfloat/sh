@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import s from "./Home.module.scss";
 import Vitrine from "../SIM/Components/SIMResultTable/SIMResultTable";
+import { COLUMN } from "./homeColumn";
 
 const Home = () => {
 	return (
@@ -54,7 +55,7 @@ const Home = () => {
 					<p>ویترین</p>
 				</div>
 				<div className={s.vitrineContainer}>
-					<Vitrine />
+					<Vitrine COLUMN={COLUMN} />
 				</div>
 			</div>
 		</div>

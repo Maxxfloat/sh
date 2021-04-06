@@ -7,3 +7,11 @@
 		height: 16rem;
 	}
 }
+
+.result {
+	padding: 1rem 0;
+	box-sizing: inherit;
+	width: 100%;
+	@include displayFlex(column, center, center);
+	font-size: 7rem;
+}

@@ -44,8 +44,8 @@
 	.navbar {
 		z-index: 10;
 		position: relative;
-		@include size(n, y);
 		height: 5rem;
+		@include size(n, y);
 		.navbar_container {
 			@include size(y, y);
 			@include displayFlex(row-reverse, flex-start, center);
@@ -62,14 +62,16 @@
 					white-space: nowrap;
 					display: inherit;
 					.link {
-						color: white;
+						color: black;
 						padding: 1rem 1rem;
 						margin-right: 0.5rem;
 					}
 				}
 				.active_tab {
 					@include size(y, y);
-
+					@include responsive(tabletPortrait) {
+						@include displayFlex(row, space-between, center);
+					}
 					.sidebarToggle {
 						padding-right: 1.5rem;
 						padding-left: 1rem;
@@ -81,10 +83,14 @@
 				}
 				.inactive_tab {
 					@include size(y, n);
+					@include displayFlex(column, center, center);
+					@include responsive(tabletLandscape) {
+						width: 10%;
+					}
 				}
 
 				.sim_background {
-					background-image: $simBase;
+					background-color: $simBase;
 				}
 
 				.domain_background {
@@ -114,6 +120,21 @@
 
 						.link {
 							padding: 1rem 1.5rem;
+						}
+						.active_tab_nav {
+							// height: 100%;
+							padding: 0 1rem;
+							.registerButtons {
+								// height: 100%;
+								button {
+									// height: 100%;
+									height: 5rem;
+									margin: 0 0.2rem;
+									font-size: 3rem;
+									box-sizing: border-box;
+									padding-bottom: 6rem;
+								}
+							}
 						}
 					}
 					.inactive_tab {

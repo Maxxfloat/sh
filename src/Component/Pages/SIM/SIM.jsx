@@ -2,9 +2,11 @@ import React from "react";
 
 import s from "./SIM.module.scss";
 
+import { COLUMN } from "./Components/SIMResultTable/COLUMN";
 import MainPage from "../../MainComponents/MainPage/MainPage";
 import SIMSearchForm from "./Components/SIMSearchForm/SIMSearchForm";
 import Result from "./Components/SIMResultTable/SIMResultTable";
+import Paggination from "./Components/SIMResultTable/SimResultPaggination";
 
 const SIM = () => {
 	const main = (
@@ -12,8 +14,9 @@ const SIM = () => {
 			<div>
 				<SIMSearchForm />
 			</div>
-			<div>
-				<Result />
+			<div className={s.result}>
+				<Result COLUMN={COLUMN} />
+				<Paggination />
 			</div>
 		</>
 	);

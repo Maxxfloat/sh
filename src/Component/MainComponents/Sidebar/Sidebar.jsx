@@ -10,15 +10,20 @@ const Sidebar = () => {
 	const dispatch = useDispatch();
 
 	const sidebarOpen = useSelector((state) => {
-		let { sidebar } = state;
-		return sidebar.sidebarOpen;
+		let { sidebarOpen } = state.sidebar;
+		return sidebarOpen;
 	});
 
 	return (
-		<div className={sidebarOpen ? s.section : `${s.section} ${s.close}`}>
+		<div
+			className={sidebarOpen ? `${s.section}` : `${s.section} ${s.close}`}
+			// className={s.section}
+		>
 			<div
 				className={s.close_toggle}
-				onClick={() => dispatch({ type: "sidebarCloseClick" })}
+				onClick={() => {
+					dispatch({ type: "sidebarCloseClick" });
+				}}
 			>
 				<AiOutlineCloseSquare />
 			</div>

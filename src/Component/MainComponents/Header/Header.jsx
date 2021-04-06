@@ -9,11 +9,15 @@ import { headerMenu } from "../../Data/NavMenuData";
 const Header = () => {
 	const dispatch = useDispatch();
 	const isSim = useSelector((state) => {
-		const { isSim } = { ...state.isSim };
+		const { isSim } = state.isSim;
 		return isSim;
 	});
-	const dimention = useSelector((state) => {
-		const { isPhone } = { ...state.Dimention };
+	const didAuth = useSelector((state) => {
+		const { didAuth } = state.didAuth;
+		return didAuth;
+	});
+	const isPhone = useSelector((state) => {
+		const { isPhone } = state.dimention;
 		return isPhone;
 	});
 
@@ -38,6 +42,22 @@ const Header = () => {
 			دامنه
 		</Link>,
 	];
+
+	// const headerSimSearchField = <div className={s.headerSimSearchField}></div>;
+	// const headerDomainSearchField = (
+	// 	<div className={s.headerDomainSearchField}></div>
+	// );
+
+	const registerButtons = (
+		<div className={s.registerButtons}>
+			<button>
+				<Link to="/register/singup">ثبت نام</Link>
+			</button>
+			<button>
+				<Link to="/register/login">ورود</Link>
+			</button>
+		</div>
+	);
 
 	const handleScroll = () => {
 		const offset = window.scrollY;
@@ -82,16 +102,27 @@ const Header = () => {
 									isSim ? s.sim_background : s.domain_background
 								}`}
 							>
-								{dimention ? (
+								{isPhone ? (
 									<span
 										className={s.sidebarToggle}
-										onClick={() => dispatch({ type: "sidebarToggleClick" })}
+										onClick={() => {
+											dispatch({ type: "sidebarToggleClick" });
+										}}
 									>
 										<FiMenu />
 									</span>
 								) : null}
 
 								{isSim ? tabs[0] : tabs[1]}
+								{!isPhone ? (
+									<div className={s.active_tab_nav}>
+										{didAuth ? (
+											<div className={s.profile}>پروفایل</div>
+										) : (
+											registerButtons
+										)}
+									</div>
+								) : null}
 							</div>
 							<div
 								className={`${s.inactive_tab} 

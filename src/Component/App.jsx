@@ -13,7 +13,7 @@ import NotFind from "./Pages/NotFind";
 
 const App = () => {
 	const isPhone = useSelector((state) => {
-		const { isPhone } = { ...state.windowDimention };
+		const { isPhone } = state.dimention;
 		return isPhone;
 	});
 	const dispatch = useDispatch();
@@ -28,7 +28,7 @@ const App = () => {
 		<Switch>
 			<Route component={Home} path="/" exact />
 			<Route component={SIM} path="/sim" />
-			<Route component={Register} path="/register" />
+			<Route component={Register} path="/register/:k" />
 			<Route component={NotFind} path="*" />
 		</Switch>
 	);
@@ -38,6 +38,7 @@ const App = () => {
 				<Header />
 				<div className={s.gap} />
 				{isPhone ? <Sidebar /> : null}
+				{/* <Sidebar /> */}
 				{pages}
 			</BrowserRouter>
 		</div>
