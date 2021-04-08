@@ -28,7 +28,7 @@
 			.cardSim {
 				right: 3%;
 				top: 0rem;
-				background-image: linear-gradient(to bottom left, #75cfb8, $simBase);
+				background-image: linear-gradient(to bottom left, #75cfb8, $simPrimary);
 				z-index: 4;
 				div {
 					@include displayFlex(column, center, flex-start);

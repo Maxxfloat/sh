@@ -54,9 +54,9 @@ const Home = () => {
 				<div>
 					<p>ویترین</p>
 				</div>
-				<div className={s.vitrineContainer}>
+				{/* <div className={s.vitrineContainer}>
 					<Vitrine COLUMN={COLUMN} />
-				</div>
+				</div> */}
 			</div>
 		</div>
 	);

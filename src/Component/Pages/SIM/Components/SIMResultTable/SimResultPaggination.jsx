@@ -1,5 +1,6 @@
 import React from "react";
 import { useTable, usePagination } from "react-table";
+import { useHistory } from "react-router-dom";
 
 import s from "./SIMResultTable.module.scss";
 import { COLUMN } from "./COLUMN";
@@ -8,6 +9,8 @@ import MOCK_DATA_2 from "../../../../Data/MOCK_DATA_2.json";
 const SimResultPaggination = () => {
 	const columns = React.useMemo(() => COLUMN, []);
 	const data = React.useMemo(() => MOCK_DATA_2, []);
+
+	const history = useHistory();
 
 	const {
 		nextPage,
@@ -28,6 +31,11 @@ const SimResultPaggination = () => {
 	);
 
 	const { pageIndex } = state;
+
+	React.useEffect(() => {
+		history.push(`/sim/${pageIndex}`);
+		return () => {};
+	}, [history, pageIndex]);
 
 	const paggination = (
 		<div className={s.paggination}>
@@ -66,7 +74,6 @@ const SimResultPaggination = () => {
 					return null;
 				})}
 			</div>
-
 			<button onClick={() => nextPage()} disabled={!canNextPage}>
 				بعدی
 			</button>

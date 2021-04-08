@@ -27,8 +27,8 @@ const App = () => {
 	const pages = (
 		<Switch>
 			<Route component={Home} path="/" exact />
-			<Route component={SIM} path="/sim" />
-			<Route component={Register} path="/register/:k" />
+			<Route component={SIM} path="/sim/:pageNumber" />
+			<Route component={Register} path="/register/:k" exact />
 			<Route component={NotFind} path="*" />
 		</Switch>
 	);

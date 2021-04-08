@@ -78,7 +78,7 @@
 						font-size: 5rem;
 						height: 5rem;
 						@include displayFlex(column, center, center);
-						color: white;
+						color: black;
 					}
 				}
 				.inactive_tab {
@@ -90,11 +90,11 @@
 				}
 
 				.sim_background {
-					background-color: $simBase;
+					background-color: $simSecondary;
 				}
 
 				.domain_background {
-					background-image: $domainBase;
+					background-color: $domainPrimary;
 				}
 			}
 		}
@@ -149,11 +149,11 @@
 					}
 
 					.sim_background {
-						background-image: $simBase;
+						background-image: $simPrimary;
 					}
 
 					.domain_background {
-						background-image: $domainBase;
+						background-image: $domainPrimary;
 					}
 				}
 			}
