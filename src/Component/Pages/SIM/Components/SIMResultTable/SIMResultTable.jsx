@@ -1,11 +1,8 @@
 import React from "react";
-import { useTable, usePagination } from "react-table";
+// import { useParams } from "react-router";
 
-import MOCK_DATA_2 from "../../../../Data/MOCK_DATA_2.json";
-
-const SIMResultTable = ({ COLUMN }) => {
-	const columns = React.useMemo(() => COLUMN, [COLUMN]);
-	const data = React.useMemo(() => MOCK_DATA_2, []);
+const SIMResultTable = ({ tableInstance }) => {
+	// const { pageNumber } = useParams();
 
 	const {
 		getTableProps,
@@ -13,13 +10,11 @@ const SIMResultTable = ({ COLUMN }) => {
 		headerGroups,
 		page,
 		prepareRow,
-	} = useTable(
-		{
-			columns,
-			data,
-		},
-		usePagination
-	);
+	} = tableInstance;
+
+	// const gotoPageHandler = () => {
+
+	// }
 
 	const table = (
 		<table {...getTableProps()}>

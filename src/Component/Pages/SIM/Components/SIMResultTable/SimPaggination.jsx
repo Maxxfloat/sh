@@ -1,15 +1,10 @@
 import React from "react";
-import { useTable, usePagination } from "react-table";
+// import { useTable, usePagination } from "react-table";
 import { useHistory } from "react-router-dom";
 
 import s from "./SIMResultTable.module.scss";
-import { COLUMN } from "./COLUMN";
-import MOCK_DATA_2 from "../../../../Data/MOCK_DATA_2.json";
 
-const SimResultPaggination = () => {
-	const columns = React.useMemo(() => COLUMN, []);
-	const data = React.useMemo(() => MOCK_DATA_2, []);
-
+const SimResultPaggination = ({ tableInstance }) => {
 	const history = useHistory();
 
 	const {
@@ -20,20 +15,13 @@ const SimResultPaggination = () => {
 		pageOptions,
 		gotoPage,
 		pageCount,
-
 		state,
-	} = useTable(
-		{
-			columns,
-			data,
-		},
-		usePagination
-	);
+	} = tableInstance;
 
 	const { pageIndex } = state;
 
 	React.useEffect(() => {
-		history.push(`/sim/${pageIndex}`);
+		history.replace(`/sim/${pageIndex + 1}`);
 		return () => {};
 	}, [history, pageIndex]);
 
@@ -58,11 +46,11 @@ const SimResultPaggination = () => {
 						return <strong key={page}>{page + 1}</strong>;
 					} else if (page < pageIndex - 2) {
 						if (page >= pageIndex - 3) {
-							return <strong key={page}>{"..."}</strong>;
+							return <strong key={page}>{".."}</strong>;
 						}
 					} else if (page > pageIndex + 2) {
 						if (page <= pageIndex + 3) {
-							return <strong key={page}>{"..."}</strong>;
+							return <strong key={page}>{".."}</strong>;
 						}
 					} else {
 						return (
