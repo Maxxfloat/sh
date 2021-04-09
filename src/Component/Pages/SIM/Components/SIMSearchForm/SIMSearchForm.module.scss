@@ -69,12 +69,12 @@ $fontSize: 1.2rem;
 				text-align: center;
 			}
 			label {
-				width: 15rem;
+				width: 11rem;
 				white-space: nowrap;
 				font-size: 2rem;
 			}
 			select {
-				width: 15rem;
+				width: 11rem;
 				font-size: $fontSize;
 				margin: auto 0;
 				option {
@@ -92,7 +92,8 @@ $fontSize: 1.2rem;
 			}
 		}
 		.price {
-			@include displayFlex(column, center, center);
+			flex-wrap: wrap;
+			@include size(n, y);
 			label {
 				padding-left: 1rem;
 			}
@@ -100,9 +101,11 @@ $fontSize: 1.2rem;
 		@include responsive(tabletPortrait) {
 			@include displayFlex(row, center, center);
 			flex-wrap: wrap;
-			width: 60%;
+			// width: 60%;
 			div {
-				width: 50%;
+				// width: 50%;
+				// display: flexbox;
+				width: fit-content;
 			}
 		}
 		.btns {
@@ -115,6 +118,7 @@ $fontSize: 1.2rem;
 				border-radius: 10px;
 				font-size: 2rem;
 				border: white solid 1px;
+				margin-left: 1rem;
 			}
 
 			.submitBtn {
