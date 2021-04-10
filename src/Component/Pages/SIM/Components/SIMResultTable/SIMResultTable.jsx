@@ -9,12 +9,9 @@ const SIMResultTable = ({ tableInstance }) => {
 		getTableBodyProps,
 		headerGroups,
 		page,
+		// rows,
 		prepareRow,
 	} = tableInstance;
-
-	// const gotoPageHandler = () => {
-
-	// }
 
 	const table = (
 		<table {...getTableProps()}>

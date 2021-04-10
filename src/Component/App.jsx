@@ -6,10 +6,11 @@ import s from "./App.module.scss";
 import Header from "./MainComponents/Header/Header";
 import Sidebar from "./MainComponents/Sidebar/Sidebar";
 // -- pages --
+import NotFind from "./Pages/NotFind";
 import Home from "./Pages/Home/Home";
 import SIM from "./Pages/SIM/SIM";
 import Register from "./Pages/Register/Register";
-import NotFind from "./Pages/NotFind";
+import Tutorial from "./Pages/Tutorial";
 
 const App = () => {
 	const isPhone = useSelector((state) => {
@@ -29,6 +30,7 @@ const App = () => {
 			<Route component={Home} path="/" exact />
 			<Route component={SIM} path="/sim/:pageNumber" />
 			<Route component={Register} path="/register/:k" exact />
+			<Route component={Tutorial} path="/tutorial" />
 			<Route component={NotFind} path="*" />
 		</Switch>
 	);

@@ -1,6 +1,7 @@
 import React from "react";
 import { useTable, usePagination } from "react-table";
-import { useParams } from "react-router";
+import { useHistory } from "react-router-dom";
+// import { useParams } from "react-router";
 
 import s from "./SIM.module.scss";
 
@@ -14,17 +15,25 @@ import Paggination from "./Components/SIMResultTable/SimPaggination";
 const SIM = () => {
 	const columns = React.useMemo(() => COLUMN, []);
 	const data = React.useMemo(() => usersData, []);
-
-	const { pageNumber } = useParams();
+	const history = useHistory();
+	// const { pageNumber } = useParams();
 
 	const tableInstance = useTable(
 		{
 			columns,
 			data,
-			initialState: { pageIndex: Number(pageNumber) - 1 },
 		},
 		usePagination
 	);
+
+	const { state } = tableInstance;
+
+	const { pageIndex } = state;
+
+	React.useEffect(() => {
+		history.replace(`/sim/${pageIndex + 1}`);
+		return () => {};
+	}, [history, pageIndex]);
 
 	const main = (
 		<>

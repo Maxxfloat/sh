@@ -1,15 +1,33 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useTable, usePagination } from "react-table";
 
 import s from "./Home.module.scss";
-// import Vitrine from "../SIM/Components/SIMResultTable/SIMResultTable";
-// import { COLUMN } from "./homeColumn";
+import { COLUMN } from "../SIM/Components/SIMResultTable/COLUMN";
+import usersData from "../../Data/MOCK_DATA_2.json";
+import SIMResultTable from "../SIM/Components/SIMResultTable/SIMResultTable";
 
 const Home = () => {
+	const columns = React.useMemo(() => COLUMN, []);
+	const data = React.useMemo(() => usersData, []);
+
+	console.log("columns: ", columns);
+	console.log("data: ", data);
+
+	const tableInstance = useTable(
+		{
+			columns,
+			data,
+		},
+		usePagination
+	);
+
 	return (
 		<div>
 			<div className={s.banner}>
-				<div className={s.container}></div>
+				<div className={s.container}>
+					<SIMResultTable tableInstance={tableInstance} />
+				</div>
 			</div>
 			<div className={s.shortCuts}>
 				<div>
@@ -23,7 +41,7 @@ const Home = () => {
 					</Link>
 				</div>
 				<div>
-					<Link className={s.link} to="/sim">
+					<Link className={s.link} to="/sim/1">
 						خرید سیمکارت
 					</Link>
 				</div>

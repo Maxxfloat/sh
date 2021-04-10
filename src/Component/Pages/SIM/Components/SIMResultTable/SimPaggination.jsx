@@ -1,11 +1,11 @@
 import React from "react";
 // import { useTable, usePagination } from "react-table";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 
 import s from "./SIMResultTable.module.scss";
 
 const SimResultPaggination = ({ tableInstance }) => {
-	const history = useHistory();
+	// const history = useHistory();
 
 	const {
 		nextPage,
@@ -19,11 +19,6 @@ const SimResultPaggination = ({ tableInstance }) => {
 	} = tableInstance;
 
 	const { pageIndex } = state;
-
-	React.useEffect(() => {
-		history.replace(`/sim/${pageIndex + 1}`);
-		return () => {};
-	}, [history, pageIndex]);
 
 	const paggination = (
 		<div className={s.paggination}>

@@ -2,89 +2,10 @@
 
 .banner {
 	min-height: 80vh;
+	height: auto;
 	margin-top: 2rem;
 	.container {
 		height: 0;
-		.cardContainer {
-			@include size(y, y);
-			font-size: 2rem;
-			position: relative;
-
-			// top: 50%;
-			.cardSim,
-			.cardDomain {
-				display: block;
-				position: absolute;
-				border: gray solid 2px;
-				border-radius: 10px;
-				width: 85%;
-				height: 40vh;
-				div {
-					font-size: inherit;
-					padding: 2rem;
-					// text-shadow: 2px 2px black;
-				}
-			}
-			.cardSim {
-				right: 3%;
-				top: 0rem;
-				background-image: linear-gradient(to bottom left, #75cfb8, $simPrimary);
-				z-index: 4;
-				div {
-					@include displayFlex(column, center, flex-start);
-					margin: 1.5rem;
-
-					// position: absolute;
-					// right: 10%;
-					color: #2c0000;
-					h1:first-child {
-						font-size: 4rem;
-						font-weight: bold;
-						// text-shadow: inherit;
-					}
-					h1 {
-						font-size: 2rem;
-						padding: 0;
-						margin: 0;
-						// text-shadow: 2px 1.5px black;
-					}
-					p {
-						font-size: 4rem;
-						font-weight: bold;
-						padding: 0;
-						margin: 2rem 0;
-					}
-				}
-			}
-			.cardDomain {
-				right: 10%;
-				top: 34vh;
-				z-index: 3;
-				background-image: linear-gradient(
-					to bottom right,
-					#0f4c75,
-					#3282b8,
-					#bbe1fa
-				);
-				@include displayFlex(row, center, center);
-				div {
-					@include displayFlex(column, center, flex-end);
-					height: 100%;
-					width: 50%;
-					color: #002e03;
-					h1:first-child {
-						font-size: 5rem;
-						font-weight: bold;
-						margin: 0;
-					}
-					h2 {
-						font-size: 2rem;
-						padding: 0;
-						margin: 0;
-					}
-				}
-			}
-		}
 	}
 }
 
