@@ -13,6 +13,10 @@
 }
 
 .section {
+	a {
+		text-decoration: none;
+		color: black;
+	}
 	z-index: 10;
 	.header {
 		display: none;
@@ -80,6 +84,16 @@
 						@include displayFlex(column, center, center);
 						color: black;
 					}
+					.active_tab_nav {
+						padding: 0 1rem;
+						.registerButtons {
+							button {
+								margin: 0 0.2rem;
+								font-size: 2rem;
+								box-sizing: border-box;
+							}
+						}
+					}
 				}
 				.inactive_tab {
 					@include size(y, n);
@@ -122,17 +136,9 @@
 							padding: 1rem 1.5rem;
 						}
 						.active_tab_nav {
-							// height: 100%;
-							padding: 0 1rem;
 							.registerButtons {
-								// height: 100%;
 								button {
-									// height: 100%;
-									height: 5rem;
-									margin: 0 0.2rem;
 									font-size: 3rem;
-									box-sizing: border-box;
-									padding-bottom: 6rem;
 								}
 							}
 						}

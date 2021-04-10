@@ -3,10 +3,16 @@
 .section {
 	.banner {
 		@include displayFlex(row, center, center);
+		// min-height: 90vh;
+		position: absolute;
+		@include responsive(tabletPortrait) {
+			right: 15%;
+		}
+		@include size(y, y);
 		.cardContainer {
 			@include size(y, y);
 			font-size: 2rem;
-			position: relative;
+			position: absolute;
 			margin: 2rem 0;
 			.cardSim,
 			.cardDomain {
@@ -15,13 +21,13 @@
 				border: gray solid 2px;
 				border-radius: 10px;
 				width: 85%;
-				height: 40vh;
+				min-height: 40vh;
 				@include responsive(tabletPortrait) {
 					width: 50%;
 				}
 				div {
 					font-size: inherit;
-					padding: 2rem;
+					padding: 0 2rem;
 					// text-shadow: 2px 2px black;
 				}
 			}
@@ -40,7 +46,7 @@
 					margin: 1.5rem;
 					color: #2c0000;
 					h1:first-child {
-						font-size: 4rem;
+						font-size: 3rem;
 						font-weight: bold;
 					}
 					h1 {
@@ -49,7 +55,7 @@
 						margin: 0;
 					}
 					p {
-						font-size: 4rem;
+						font-size: 3rem;
 						font-weight: bold;
 						padding: 0;
 						margin: 2rem 0;
@@ -73,8 +79,11 @@
 					// width: 50%;
 					@include size(y, y);
 					color: white;
-					h1:first-child {
-						font-size: 5rem;
+					.gap {
+						height: 6rem;
+					}
+					h1 {
+						font-size: 4rem;
 						font-weight: bold;
 						margin: 0;
 					}
@@ -82,6 +91,11 @@
 						font-size: 2rem;
 						padding: 0;
 						margin: 0;
+					}
+					@include responsive(tabletPortrait) {
+						.gap {
+							height: 1rem;
+						}
 					}
 				}
 			}

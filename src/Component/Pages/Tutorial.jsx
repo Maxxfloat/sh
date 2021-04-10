@@ -16,6 +16,7 @@ const Tutorial = () => {
 					</div>
 					<div className={s.cardDomain}>
 						<div>
+							<div className={s.gap}></div>
 							<h1>دامنه</h1>
 							<h2>خرید و فروش دامنه</h2>
 							<h2>صدها دامنه آماده انتخاب</h2>
