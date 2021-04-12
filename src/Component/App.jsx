@@ -11,6 +11,7 @@ import Home from "./Pages/Home/Home";
 import SIM from "./Pages/SIM/SIM";
 import Register from "./Pages/Register/Register";
 import Tutorial from "./Pages/Tutorial";
+import Domain from "./Pages/Domain/Domain";
 
 const App = () => {
 	const isPhone = useSelector((state) => {
@@ -31,6 +32,8 @@ const App = () => {
 			<Route component={SIM} path="/sim/:pageNumber" />
 			<Route component={Register} path="/register/:k" exact />
 			<Route component={Tutorial} path="/tutorial" />
+			<Route component={Domain} path="/domain/:pageNumber" />
+
 			<Route component={NotFind} path="*" />
 		</Switch>
 	);

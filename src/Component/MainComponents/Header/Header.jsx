@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { FiMenu } from "react-icons/fi";
 
@@ -7,6 +7,7 @@ import s from "./Header.module.scss";
 import { headerMenu } from "../../Data/NavMenuData";
 
 const Header = () => {
+	const location = useLocation();
 	const dispatch = useDispatch();
 	const isSim = useSelector((state) => {
 		const { isSim } = state.isSim;
@@ -33,7 +34,7 @@ const Header = () => {
 			سیم کارت
 		</Link>,
 		<Link
-			to="/domain"
+			to="/domain/1"
 			className={s.link}
 			onClick={() => {
 				dispatch({ type: "switchToDomain" });
@@ -70,11 +71,16 @@ const Header = () => {
 
 	React.useEffect(() => {
 		window.addEventListener("scroll", handleScroll);
-
+		if (location.pathname.includes("/domain")) {
+			function switchToDomain() {
+				dispatch({ type: "switchToDomain" });
+			}
+			switchToDomain();
+		}
 		return () => {
 			window.removeEventListener("scroll", () => handleScroll);
 		};
-	}, []);
+	}, [location.pathname, dispatch]);
 
 	return (
 		<>

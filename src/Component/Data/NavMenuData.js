@@ -1,6 +1,6 @@
 export const headerMenu = [
 	{ name: "صفحه اصلی", link: "/" },
-	{ name: "ثبت نام", link: "/register" },
+	{ name: "ثبت نام", link: "/register/signup" },
 	{ name: "سوالات مداول", link: "/faq" },
 	{
 		name: "راهنما",
