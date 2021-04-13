@@ -25,11 +25,25 @@ const Home = () => {
 	return (
 		<div>
 			<div className={s.banner}>
-				<div className={s.container}>
-					<SIMResultTable tableInstance={tableInstance} />
+				{/* <div className={s.container}> */}
+				<div className={s.bannerTitle}>
+					<h1>سیم کارت</h1>
+					<p>
+						«اسم سایت» بدون هزینه و بدون واسطه سیم کارت کار کرده خودرا بفروشید و
+						یا از بین صدها سیم کارت شماره مورد علاقه خودرا پیدا کنید
+					</p>
 				</div>
+				<SIMResultTable tableInstance={tableInstance} />
+				{/* </div> */}
 			</div>
-			<div className={s.shortCuts}>
+		</div>
+	);
+};
+
+export default Home;
+
+{
+	/* <div className={s.shortCuts}>
 				<div>
 					<Link className={s.link} to="/tutorial">
 						راهنما
@@ -55,12 +69,8 @@ const Home = () => {
 				<div>
 					<p>ویترین</p>
 				</div>
-				{/* <div className={s.vitrineContainer}>
+				 <div className={s.vitrineContainer}>
 					<Vitrine COLUMN={COLUMN} />
-				</div> */}
-			</div>
-		</div>
-	);
-};
-
-export default Home;
+				</div> 
+</div> */
+}

@@ -1,11 +1,30 @@
 @import "/src/Component/UI/Sass/Main.scss";
 
 .banner {
-	min-height: 80vh;
+	min-height: 100vh;
 	height: auto;
-	margin-top: 2rem;
-	.container {
-		height: 0;
+	width: 100%;
+	// margin-top: 2rem;
+	// .container {
+	// height: 0;
+	@include displayFlex(column, center, center);
+	.bannerTitle {
+		width: 90%;
+		h1 {
+			text-align: center;
+			font-size: 5rem;
+		}
+		p {
+			text-align: justify;
+			font-size: 3rem;
+			// width: 90%;
+		}
+	}
+	table {
+		width: 100%;
+		font-size: inherit;
+		font-size: 3.5rem;
+		// }
 	}
 }
 
