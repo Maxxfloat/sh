@@ -33,36 +33,3 @@ const Home = () => {
 };
 
 export default Home;
-
-{
-	/* <div className={s.shortCuts}>
-				<div>
-					<Link className={s.link} to="/tutorial">
-						راهنما
-					</Link>
-				</div>
-				<div>
-					<Link className={s.link} to="/register">
-						ثبت نام
-					</Link>
-				</div>
-				<div>
-					<Link className={s.link} to="/sim/1">
-						خرید سیمکارت
-					</Link>
-				</div>
-				<div>
-					<Link className={s.link} to="/domain">
-						خرید دامنه
-					</Link>
-				</div>
-			</div>
-			<div className={s.vitrine}>
-				<div>
-					<p>ویترین</p>
-				</div>
-				 <div className={s.vitrineContainer}>
-					<Vitrine COLUMN={COLUMN} />
-				</div> 
-</div> */
-}
