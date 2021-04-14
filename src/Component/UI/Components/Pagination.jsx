@@ -27,7 +27,7 @@ const Pagination = ({ tableInstance }) => {
 				{"<<"}
 			</button>
 			<button onClick={() => previousPage()} disabled={!canPreviousPage}>
-				قبلی
+				{"<"}
 			</button>
 			<div>
 				{pageOptions.map((page) => {
@@ -52,7 +52,7 @@ const Pagination = ({ tableInstance }) => {
 				})}
 			</div>
 			<button onClick={() => nextPage()} disabled={!canNextPage}>
-				بعدی
+				{">"}
 			</button>
 			<button
 				onClick={() => {

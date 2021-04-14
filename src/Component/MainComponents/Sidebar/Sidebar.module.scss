@@ -5,37 +5,37 @@
 	position: fixed;
 	top: 0;
 	right: 0;
-	background-color: black;
+	background-color: #c4c8ff;
 	height: 100vh;
 	width: 20rem;
 	z-index: 100;
+	border-left: black solid 2px;
 	.close_toggle {
 		box-sizing: border-box;
 		display: flex;
-		color: white;
+		color: black;
 		padding: 1rem 2rem 1rem 1rem;
 		font-size: 5rem;
-		width: 100%;
-		border-bottom: white 1.5px solid;
+		// width: 100%;
+		border-bottom: black 1.5px solid;
 	}
 	ul {
+		@include displayFlex(column, center, center);
 		margin: 0;
 		padding: 0;
-		width: 100%;
 
 		li {
 			box-sizing: border-box;
-
-			width: 100%;
-			border-bottom: blanchedalmond solid 1.5px;
+			width: 80%;
+			border-bottom: black solid 1.5px;
 			&:hover,
 			&:active {
 				background-color: #3a3a3a;
 			}
 			.link {
 				display: block;
-				padding: 0.5rem 2rem 0.5rem 2rem;
-				color: gray;
+				padding: 2rem 1rem 0.2rem 2rem;
+				color: black;
 				font-size: 1.5rem;
 			}
 		}
@@ -43,5 +43,6 @@
 }
 .close {
 	width: 0rem;
+	border: none;
 	overflow: hidden;
 }

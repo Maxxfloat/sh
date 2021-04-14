@@ -26,9 +26,11 @@ const SIMResultTable = ({ wantPagination, s }) => {
 	const { pageIndex } = state;
 
 	React.useEffect(() => {
-		history.replace(`/sim/${pageIndex + 1}`);
+		if (wantPagination) {
+			history.replace(`/sim/${pageIndex + 1}`);
+		}
 		return () => {};
-	}, [history, pageIndex]);
+	}, [history, pageIndex, wantPagination]);
 
 	return (
 		<>

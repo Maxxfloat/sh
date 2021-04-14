@@ -23,7 +23,7 @@ const Header = () => {
 	});
 
 	const [sticky, setSticky] = React.useState(false);
-	const navbarRef = React.useRef(null);
+	// const navbarRef = React.useRef(null);
 
 	const tabs = [
 		<Link
@@ -60,6 +60,29 @@ const Header = () => {
 		</div>
 	);
 
+	const phoneHeader = (
+		<>
+			<div
+				className={`${s.phoneHeader} ${
+					isSim ? s.sim_background : s.domain_background
+				}`}
+			>
+				<button>
+					<Link to="/register/login">ورود</Link>
+				</button>
+				<div className={s.logo}>logo</div>
+				<span
+					className={s.sidebarToggle}
+					onClick={() => {
+						dispatch({ type: "sidebarToggleClick" });
+					}}
+				>
+					<FiMenu />
+				</span>
+			</div>
+		</>
+	);
+
 	const handleScroll = () => {
 		const offset = window.scrollY;
 		if (offset > 0) {
@@ -85,30 +108,32 @@ const Header = () => {
 	return (
 		<>
 			<div className={s.section}>
-				<div className={s.header}>
-					<ul>
-						{headerMenu.map((item, index) => (
-							<li key={index}>
-								<Link className={s.link} to={item.link}>
-									{item.name}
-								</Link>
-							</li>
-						))}
-					</ul>
-				</div>
-				<div
-					ref={navbarRef}
-					className={`${s.navbar} ${sticky ? s.scrolled : ""}`}
-				>
+				{isPhone ? (
+					phoneHeader
+				) : (
+					<div className={s.header}>
+						<ul>
+							{headerMenu.map((item, index) => (
+								<li key={index}>
+									<Link className={s.link} to={item.link}>
+										{item.name}
+									</Link>
+								</li>
+							))}
+						</ul>
+					</div>
+				)}
+
+				<div className={`${s.navbar} ${sticky ? s.scrolled : ""}`}>
 					<div className={s.navbar_container}>
-						<div className={s.logo}>logo</div>
+						{!isPhone && <div className={s.logo}>logo</div>}
 						<div className={s.navbar_menu}>
 							<div
 								className={`${s.active_tab} ${
 									isSim ? s.sim_background : s.domain_background
 								}`}
 							>
-								{isPhone ? (
+								{/* {isPhone ? (
 									<span
 										className={s.sidebarToggle}
 										onClick={() => {
@@ -117,7 +142,7 @@ const Header = () => {
 									>
 										<FiMenu />
 									</span>
-								) : null}
+								) : null} */}
 
 								{isSim ? tabs[0] : tabs[1]}
 								{!isPhone ? (

@@ -19,7 +19,7 @@
 	}
 	z-index: 10;
 	.header {
-		display: none;
+		// display: none;
 		ul {
 			margin: 0;
 			padding: 0;
@@ -41,8 +41,35 @@
 				}
 			}
 		}
-		@include responsive(tabletPortrait) {
-			display: block;
+		// @include responsive(tabletPortrait) {
+		// 	display: block;
+		// }
+	}
+	.phoneHeader {
+		@include displayFlex(row, space-between, center);
+		direction: ltr;
+		// padding: 0 0.5rem;
+		height: 5rem;
+		font-size: 3rem;
+		button {
+			// border: black double 2px;
+			border: none;
+			border-radius: 0;
+			background-color: #00559b;
+			height: 100%;
+			width: 25%;
+			a {
+				font-size: inherit;
+				color: white;
+			}
+		}
+		.sidebarToggle {
+			padding-right: 1.5rem;
+			padding-left: 1rem;
+			font-size: 5rem;
+			// height: 5rem;
+			@include displayFlex(column, center, center);
+			color: black;
 		}
 	}
 	.navbar {
@@ -101,14 +128,6 @@
 					@include responsive(tabletLandscape) {
 						width: 10%;
 					}
-				}
-
-				.sim_background {
-					background-color: $simSecondary;
-				}
-
-				.domain_background {
-					background-color: $domainPrimary;
 				}
 			}
 		}
@@ -170,4 +189,15 @@
 		top: 0;
 		left: 0;
 	}
+}
+.sim_background {
+	background-color: $simSecondary;
+	border-bottom: #00750a solid 2px;
+	box-sizing: border-box;
+}
+
+.domain_background {
+	background-color: $domainPrimary;
+	border-bottom: #1e5a92 solid 2px;
+	box-sizing: border-box;
 }

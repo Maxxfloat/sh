@@ -15,12 +15,8 @@ const Home = () => {
 						یا از بین صدها سیم کارت شماره مورد علاقه خودرا پیدا کنید
 					</p>
 				</div>
-				<div>
-					<SimTable wantPagination={false} s={s} />
-				</div>
-				<div>
-					<DomainTable wantPagination={false} s={s} />
-				</div>
+				<SimTable wantPagination={false} s={s} />
+				<DomainTable wantPagination={false} s={s} />
 			</div>
 		</div>
 	);
