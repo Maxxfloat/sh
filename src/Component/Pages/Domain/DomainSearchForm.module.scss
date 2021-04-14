@@ -2,7 +2,14 @@
 
 .container {
 	background-color: $domainPrimary;
-
+	padding: 1rem 0;
+	.title {
+		h2 {
+			font-size: 2rem;
+			text-align: center;
+			text-shadow: 1px 1px 20px black;
+		}
+	}
 	form {
 		@include size(y, y);
 		@include displayFlex(column, center, center);

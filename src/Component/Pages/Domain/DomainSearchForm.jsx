@@ -2,26 +2,30 @@ import React from "react";
 import { useForm } from "react-hook-form";
 
 import s from "./DomainSearchForm.module.scss";
-import { categoryOptions, suffix } from "./DomainArray.js";
+import { categoryOptions, suffix } from "./DomainData.js";
 
 const DomainSearchForm = () => {
 	const { register, handleSubmit, reset } = useForm();
 
 	return (
 		<div className={s.container}>
+			<div className={s.title}>
+				<h2>فرم جست و جو</h2>
+			</div>
 			<form onSubmit={handleSubmit((data) => console.log(data))}>
 				<div className={s.customDomain}>
 					<label>دامنه</label>
 
 					<input
 						name="domain.customDomain"
+						placeholder="Example"
 						ref={register({
 							// pattern : {
 							// 	value:
 							// }
 						})}
 					/>
-					<select name="domain.category" ref={register}>
+					<select name="domain.suffix" ref={register}>
 						{suffix.map((option, index) => (
 							<React.Fragment key={index}>{option}</React.Fragment>
 						))}

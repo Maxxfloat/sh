@@ -5,4 +5,41 @@
 	.ad {
 		height: 20rem;
 	}
+	.table {
+		table {
+			@include size(y, y);
+			border-collapse: collapse;
+			td,
+			th {
+				padding: 0.5rem;
+				font-size: 1rem;
+			}
+			th {
+				padding-top: 0.5rem;
+				padding-bottom: 0.5rem;
+				text-align: center;
+				background-color: $domainSecondary;
+				color: black;
+			}
+			tr {
+				border: #001e31 solid 2px;
+				margin: 1rem 0;
+				text-align: center;
+			}
+			tr:nth-child(even) {
+				background-color: #d3d3d3;
+			}
+		}
+	}
+	.pagination {
+		@include displayFlex(row, center, center);
+		strong {
+			margin: 0 0.5rem;
+			font-size: 1rem;
+		}
+		button {
+			font-size: 1.1rem;
+			margin: 1rem 0.2rem;
+		}
+	}
 }

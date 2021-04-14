@@ -1,9 +1,6 @@
 import React from "react";
-// import { useParams } from "react-router";
 
-const SIMResultTable = ({ tableInstance }) => {
-	// const { pageNumber } = useParams();
-
+const Table = ({ tableInstance }) => {
 	const {
 		getTableProps,
 		getTableBodyProps,
@@ -13,7 +10,7 @@ const SIMResultTable = ({ tableInstance }) => {
 		prepareRow,
 	} = tableInstance;
 
-	const table = (
+	return (
 		<table {...getTableProps()}>
 			<thead>
 				{
@@ -68,8 +65,6 @@ const SIMResultTable = ({ tableInstance }) => {
 			</tbody>
 		</table>
 	);
-
-	return table;
 };
 
-export default SIMResultTable;
+export default Table;

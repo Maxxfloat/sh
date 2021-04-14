@@ -3,13 +3,7 @@ import { useForm } from "react-hook-form";
 
 import s from "./SIMSearchForm.module.scss";
 
-import {
-	preNumber,
-	// operator,
-	condition,
-	location,
-	// priceOffer,
-} from "./SearchData";
+import { preNumber, condition, location } from "./SimData";
 
 const SIMSearchForm = () => {
 	const { register, handleSubmit, reset } = useForm();
@@ -23,7 +17,7 @@ const SIMSearchForm = () => {
 			<form onSubmit={handleSubmit((data) => console.log(data))}>
 				<div className={s.number_line}>
 					<label>شماره</label>
-					<select name="SIM.number.preNumber" defaultValue="" ref={register}>
+					<select name="sim.number.preNumber" defaultValue="" ref={register}>
 						<option value="">فرقی ندارد</option>
 						{preNumber.map((item) => {
 							return (
@@ -44,7 +38,7 @@ const SIMSearchForm = () => {
 				<div className={s.kind}>
 					<label>نوع سیمکارت</label>
 					{/* <div> */}
-					<select name="SIM.kind" defaultValue="" ref={register}>
+					<select name="sim.kind" defaultValue="" ref={register}>
 						<option value="">فرقی ندارد</option>
 						<option value="daemi">دائمی</option>
 						<option value="etebari">اعتباری</option>
@@ -65,7 +59,7 @@ const SIMSearchForm = () => {
 				<div>
 					<label>مرغوبیت</label>
 					<select
-						name="SIM.condition"
+						name="sim.condition"
 						ref={register}
 						className={s.condition_dropdown}
 					>
@@ -87,7 +81,7 @@ const SIMSearchForm = () => {
 					</div> */}
 				<div className={s.rondKind}>
 					<label>نوع رند</label>
-					<select name="SIM.rond_kind" defaultValue="" ref={register}>
+					<select name="sim.rond_kind" defaultValue="" ref={register}>
 						<option value="">فرقی نمی کند</option>
 						<option value="49">رند حروفی</option>
 						<option value="42">رند 7 رقم یکی</option>
@@ -132,7 +126,7 @@ const SIMSearchForm = () => {
 				</div>
 				<div className={s.location}>
 					<label>استان</label>
-					<select name="SIM.province" defaultValue="" ref={register}>
+					<select name="sim.province" defaultValue="" ref={register}>
 						<option value="">فرقی ندارد</option>
 						{location.map((item) => (
 							<option key={item.value} value={item.value}>
@@ -176,7 +170,7 @@ const SIMSearchForm = () => {
 					<div>
 						<label>قیمت از</label>
 						<input
-							name="SIM.price.as"
+							name="sim.price.as"
 							ref={register({
 								pattern: {
 									value: /^[0-9]*$/,
@@ -189,7 +183,7 @@ const SIMSearchForm = () => {
 					<div>
 						<label>قیمت تا</label>
 						<input
-							name="SIM.price.to"
+							name="sim.price.to"
 							ref={register({
 								pattern: {
 									value: /^[0-9]*$/,

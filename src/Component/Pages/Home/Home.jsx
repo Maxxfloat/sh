@@ -1,31 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { useTable, usePagination } from "react-table";
 
 import s from "./Home.module.scss";
-import { COLUMN } from "../SIM/Components/SIMResultTable/COLUMN";
-import usersData from "../../Data/MOCK_DATA_2.json";
-import SIMResultTable from "../SIM/Components/SIMResultTable/SIMResultTable";
+import SimTable from "../SIM/SIMTable/SimTable";
+import DomainTable from "../Domain/DomainTable";
 
 const Home = () => {
-	const columns = React.useMemo(() => COLUMN, []);
-	const data = React.useMemo(() => usersData, []);
-
-	console.log("columns: ", columns);
-	console.log("data: ", data);
-
-	const tableInstance = useTable(
-		{
-			columns,
-			data,
-		},
-		usePagination
-	);
-
 	return (
 		<div>
 			<div className={s.banner}>
-				{/* <div className={s.container}> */}
 				<div className={s.bannerTitle}>
 					<h1>سیم کارت</h1>
 					<p>
@@ -33,8 +15,12 @@ const Home = () => {
 						یا از بین صدها سیم کارت شماره مورد علاقه خودرا پیدا کنید
 					</p>
 				</div>
-				<SIMResultTable tableInstance={tableInstance} />
-				{/* </div> */}
+				<div>
+					<SimTable wantPagination={false} s={s} />
+				</div>
+				<div>
+					<DomainTable wantPagination={false} s={s} />
+				</div>
 			</div>
 		</div>
 	);

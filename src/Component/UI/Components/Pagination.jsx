@@ -1,12 +1,6 @@
 import React from "react";
-// import { useTable, usePagination } from "react-table";
-// import { useHistory } from "react-router-dom";
 
-import s from "./SIMResultTable.module.scss";
-
-const SimResultPaggination = ({ tableInstance }) => {
-	// const history = useHistory();
-
+const Pagination = ({ tableInstance }) => {
 	const {
 		nextPage,
 		previousPage,
@@ -20,8 +14,8 @@ const SimResultPaggination = ({ tableInstance }) => {
 
 	const { pageIndex } = state;
 
-	const paggination = (
-		<div className={s.paggination}>
+	return (
+		<>
 			<span>
 				{"  "}
 				<strong>
@@ -68,10 +62,8 @@ const SimResultPaggination = ({ tableInstance }) => {
 			>
 				{">>"}
 			</button>
-		</div>
+		</>
 	);
-
-	return paggination;
 };
 
-export default SimResultPaggination;
+export default Pagination;

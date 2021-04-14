@@ -96,3 +96,16 @@ export const suffix = [
 	<option value="47">love</option>,
 	<option value="13">xyz</option>,
 ];
+
+export const COLUMN = [
+	{ Header: "دامنه", accessor: "domain" },
+	{
+		Header: "نام",
+		accessor: "name",
+	},
+	{ Header: "قیمت (تومان)", accessor: "price" },
+	{
+		Header: "تماس",
+		accessor: "tell",
+	},
+];

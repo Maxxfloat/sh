@@ -1,0 +1,126 @@
+@import "/src/Component/UI/Sass/Main.scss";
+.section {
+	// div {
+	background-color: #f0f0f0;
+	@include displayFlex(column, flex-start, center);
+	.container {
+		@include displayFlex(column, flex-start, center);
+		background-color: white;
+		width: 97%;
+		min-height: 100vh;
+		margin: 5rem 0;
+		border-radius: 15px;
+
+		.title {
+			h1 {
+				font-size: 3rem;
+			}
+		}
+		.profile,
+		.cellPhone,
+		.cellDomain {
+			padding: 3rem 0;
+			width: 95%;
+			font-size: 2.5rem;
+			box-sizing: border-box;
+			form {
+				font-size: inherit;
+				@include displayFlex(column, flex-start, flex-start);
+				label {
+					margin-top: 2rem;
+				}
+				input {
+					width: 60%;
+					direction: ltr;
+					padding-left: 1rem;
+					border: #002a36 solid 0.5px;
+					border-radius: 2px;
+					background-color: #efffff;
+				}
+				textarea,
+				textarea:focus,
+				textarea:active {
+					width: 100%;
+					height: 20rem;
+					border: #002a36 solid 0.5px;
+					border-radius: 2px;
+					background-color: #efffff;
+				}
+			}
+			@include responsive(tabletPortrait) {
+				width: 50%;
+				form {
+					input {
+						width: 50%;
+					}
+				}
+			}
+		}
+		.profile {
+			p {
+				margin: 0;
+				text-align: justify;
+			}
+		}
+		.cellPhone {
+			// form {
+			div {
+				@include displayFlex(row, flex-start, center);
+				@include size(null, y);
+				// padding: 1rem 0;
+				box-sizing: border-box;
+				font-size: inherit;
+				label {
+					width: 13rem;
+					// font-size: inherit;
+
+					margin: 0;
+				}
+
+				select {
+					width: 13rem;
+					border: #002a36 solid 0.5px;
+					border-radius: 2px;
+					background-color: #efffff;
+					option {
+						background-color: white;
+						&:active,
+						&:focus,
+						&:hover {
+							background-color: #969696;
+							color: black;
+						}
+					}
+				}
+			}
+			// }
+			.number_line {
+				direction: ltr;
+				@include displayFlex(row, center, center);
+				flex-wrap: nowrap;
+				margin: auto 0;
+				label {
+					width: 6rem;
+					font-size: inherit;
+					margin: 0;
+				}
+				select {
+					width: 10rem;
+				}
+			}
+			.btns {
+				@include displayFlex(row-reverse, flex-start, center);
+				// width: 100%;
+				// height: 10vh;
+				// align-self: flex-end;
+				padding: 2rem;
+			}
+		}
+		@include responsive(tabletPortrait) {
+			box-sizing: border-box;
+			width: 90%;
+			box-shadow: gray 5px 5px 20px;
+		}
+	}
+	// }
+}
