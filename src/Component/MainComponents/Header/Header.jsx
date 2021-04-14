@@ -51,9 +51,9 @@ const Header = () => {
 
 	const registerButtons = (
 		<div className={s.registerButtons}>
-			<button>
+			{/* <button>
 				<Link to="/register/singup">ثبت نام</Link>
-			</button>
+			</button> */}
 			<button>
 				<Link to="/register/login">ورود</Link>
 			</button>

@@ -119,6 +119,18 @@
 								font-size: 2rem;
 								box-sizing: border-box;
 							}
+							button {
+								// border: black double 2px;
+								border: none;
+								border-radius: 3px;
+								background-color: #00559b;
+								height: 90%;
+								width: 7rem;
+								a {
+									font-size: inherit;
+									color: white;
+								}
+							}
 						}
 					}
 				}

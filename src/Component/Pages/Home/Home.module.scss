@@ -8,43 +8,43 @@
 	// .container {
 	// height: 0;
 	@include displayFlex(column, center, center);
-	.bannerTitle {
-		width: 90%;
-		h1 {
-			text-align: center;
-			font-size: 5rem;
-		}
-		p {
-			text-align: justify;
-			font-size: 3rem;
-			// width: 90%;
-		}
-	}
-
-	.table {
+	.bannerContainer {
+		@include displayFlex(column, center, center);
 		width: 100%;
-		table {
-			@include size(y, y);
-			border-collapse: collapse;
-			td,
-			th {
-				padding: 0.5rem;
-				font-size: 1rem;
-			}
-			th {
-				padding-top: 0.5rem;
-				padding-bottom: 0.5rem;
+		.bannerTitle {
+			width: 90%;
+			h1 {
 				text-align: center;
+				font-size: 5rem;
+			}
+			p {
+				text-align: justify;
+				font-size: 3rem;
+				// width: 90%;
+			}
+		}
+		.simTable,
+		.domainTable {
+			width: 100%;
+		}
+		.simTable {
+			th {
 				background-color: $simPrimary;
-				color: black;
 			}
 			tr {
 				border: $simPrimary solid 2px;
-				margin: 1rem 0;
 			}
-			tr:nth-child(even) {
-				background-color: #d3d3d3;
+		}
+		.domainTable {
+			th {
+				background-color: $domainPrimary;
 			}
+			tr {
+				border: darken($domainPrimary, 10) solid 2px;
+			}
+		}
+		@include responsive(tabletLandscape) {
+			width: 50%;
 		}
 	}
 	// table {
@@ -55,36 +55,61 @@
 	// }
 }
 
-.shortCuts {
-	@include displayFlex(column, center, center);
-	div {
-		margin-bottom: 2rem;
-		width: 90%;
-		border: black solid 2px;
-		border-radius: 3px;
-		text-align: center;
-		.link {
-			font-weight: bold;
-			font-size: 3rem;
-			color: black;
-			text-shadow: 0px 0px 3px gray;
-		}
-	}
+.store {
+	min-height: 100vh;
 }
 
-.vitrine {
-	min-height: 90vh;
-	@include size(n, y);
-	.vitrineContainer {
-		font-size: 5rem;
-		text-align: center;
-		width: 100%;
-	}
+// .shortCuts {
+// 	@include displayFlex(column, center, center);
+// 	div {
+// 		margin-bottom: 2rem;
+// 		width: 90%;
+// 		border: black solid 2px;
+// 		border-radius: 3px;
+// 		text-align: center;
+// 		.link {
+// 			font-weight: bold;
+// 			font-size: 3rem;
+// 			color: black;
+// 			text-shadow: 0px 0px 3px gray;
+// 		}
+// 	}
+// }
 
-	@include displayFlex(column, center, center);
-	@include responsive(tabletPortrait) {
-		.vitrineContainer {
-			width: 90%;
-		}
+table {
+	@include size(y, y);
+	border-collapse: collapse;
+	td,
+	th {
+		padding: 0.5rem;
+		font-size: 1rem;
+	}
+	th {
+		padding-top: 0.5rem;
+		padding-bottom: 0.5rem;
+		text-align: center;
+		color: black;
+	}
+	tr {
+		margin: 1rem 0;
+	}
+	tr:nth-child(even) {
+		background-color: #d3d3d3;
 	}
 }
+// .vitrine {
+// 	min-height: 90vh;
+// 	@include size(n, y);
+// 	.vitrineContainer {
+// 		font-size: 5rem;
+// 		text-align: center;
+// 		width: 100%;
+// 	}
+
+// 	@include displayFlex(column, center, center);
+// 	@include responsive(tabletPortrait) {
+// 		.vitrineContainer {
+// 			width: 90%;
+// 		}
+// 	}
+// }
